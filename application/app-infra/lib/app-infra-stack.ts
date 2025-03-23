@@ -1,118 +1,98 @@
-import { RemovalPolicy, Stack, StackProps } from "aws-cdk-lib";
-import { Distribution, ViewerProtocolPolicy } from "aws-cdk-lib/aws-cloudfront";
-import { S3StaticWebsiteOrigin } from "aws-cdk-lib/aws-cloudfront-origins";
-import { BlockPublicAccess, Bucket } from "aws-cdk-lib/aws-s3";
+import { Stack, StackProps, RemovalPolicy, Duration } from "aws-cdk-lib";
 import { Construct } from "constructs";
+import * as s3 from "aws-cdk-lib/aws-s3";
+import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
+import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
+import * as iam from "aws-cdk-lib/aws-iam";
 
 interface AppInfraStackProps extends StackProps {
-  envName: string | undefined;
+  envName: string;
 }
 
 export class AppInfraStack extends Stack {
-  constructor(scope: Construct, id: string, props?: AppInfraStackProps) {
+  constructor(scope: Construct, id: string, props: AppInfraStackProps) {
     super(scope, id, props);
-    if (!props?.envName) return;
+
     const { envName } = props;
 
-    const appBucket = new Bucket(this, "AppBucket", {
+    // 1. Private S3 Bucket (NO website hosting!)
+    const appBucket = new s3.Bucket(this, `BuzzBrainApp`, {
       bucketName: `buzzbrain-app-${envName}`,
-      websiteIndexDocument: "index.html",
-      websiteErrorDocument: "index.html",
-      publicReadAccess: true,
       removalPolicy: RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
-      blockPublicAccess: new BlockPublicAccess({
-        blockPublicAcls: false,
-        blockPublicPolicy: false,
-        ignorePublicAcls: false,
-        restrictPublicBuckets: false,
-      }),
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+      publicReadAccess: false,
+      enforceSSL: true,
     });
 
-    // CloudFront Distribution
-    new Distribution(this, "BuzzBrainDistribution", {
-      comment: `buzzbrain-app-distribution-${envName}`,
+    // 2. Origin Access Identity (OAI) for CloudFront
+    const originAccessIdentity = new cloudfront.OriginAccessIdentity(
+      this,
+      "AppOAI",
+      { comment: `OAI for ${envName}` }
+    );
+
+    // 3. Grant OAI read access to the bucket
+    appBucket.addToResourcePolicy(
+      new iam.PolicyStatement({
+        actions: ["s3:GetObject"],
+        resources: [appBucket.arnForObjects("*")],
+        principals: [originAccessIdentity.grantPrincipal],
+      })
+    );
+
+    // 4. Security Headers Policy (HSTS, XSS, etc.)
+    const securityHeadersPolicy = new cloudfront.ResponseHeadersPolicy(
+      this,
+      "SecurityHeadersPolicy",
+      {
+        comment: "Security headers policy",
+        securityHeadersBehavior: {
+          // strictTransportSecurity protects against SSL stripping attacks.
+          strictTransportSecurity: {
+            override: true,
+            accessControlMaxAge: Duration.days(365 * 2),
+            includeSubdomains: true,
+            preload: true,
+          },
+          xssProtection: { override: true, protection: true, modeBlock: true },
+          contentTypeOptions: { override: true },
+          // Prevents your site from being embedded in an <iframe>
+          frameOptions: {
+            override: true,
+            frameOption: cloudfront.HeadersFrameOption.DENY,
+          },
+        },
+      }
+    );
+
+    // 5. CloudFront Distribution (SPA-friendly)
+    new cloudfront.Distribution(this, "AppDistribution", {
+      defaultRootObject: "index.html",
       defaultBehavior: {
-        origin: new S3StaticWebsiteOrigin(appBucket),
-        viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        origin: new origins.S3Origin(appBucket, {
+          originAccessIdentity,
+        }),
+        compress: true,
+        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        responseHeadersPolicy: securityHeadersPolicy,
+        cachePolicy: cloudfront.CachePolicy.CACHING_OPTIMIZED, // Pre-configured for static assets
       },
+      errorResponses: [
+        // Handle SPA client-side routing
+        {
+          httpStatus: 404,
+          responseHttpStatus: 200,
+          responsePagePath: "/index.html",
+          ttl: Duration.seconds(0), // Do NOT cache error responses
+        },
+      ],
+      // Optional: Enable logging for debugging
+      enableLogging: true,
+      logBucket: new s3.Bucket(this, "CloudFrontLogBucket", {
+        removalPolicy: RemovalPolicy.DESTROY,
+        autoDeleteObjects: true,
+      }),
     });
   }
 }
-
-//// ------------------------------------
-
-// import { Stack, StackProps, RemovalPolicy, Duration } from "aws-cdk-lib";
-// import { Construct } from "constructs";
-// import * as s3 from "aws-cdk-lib/aws-s3";
-// import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
-// import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
-// import * as iam from "aws-cdk-lib/aws-iam";
-
-// interface AppInfraStackProps extends StackProps {
-//   envName: string;
-// }
-
-// export class AppInfraStack extends Stack {
-//   constructor(scope: Construct, id: string, props: AppInfraStackProps) {
-//     super(scope, id, props);
-
-//     const { envName } = props;
-
-//     // S3 bucket with static website hosting, but PRIVATE
-//     const siteBucket = new s3.Bucket(this, "AppBucket", {
-//       bucketName: `buzzbrain-app-${envName}`,
-//       websiteIndexDocument: "index.html",
-//       websiteErrorDocument: "index.html",
-//       removalPolicy: RemovalPolicy.DESTROY,
-//       autoDeleteObjects: true,
-//       publicReadAccess: false, // critical
-//       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
-//     });
-
-//     // CloudFront Origin Access Identity
-//     const originAccessIdentity = new cloudfront.OriginAccessIdentity(this, "AppOAI", {
-//       comment: `OAI for buzzbrain ${envName}`,
-//     });
-
-//     // Grant OAI read access to S3 bucket
-//     siteBucket.addToResourcePolicy(
-//       new iam.PolicyStatement({
-//         actions: ["s3:GetObject"],
-//         resources: [`${siteBucket.bucketArn}/*`],
-//         principals: [
-//           new iam.CanonicalUserPrincipal(originAccessIdentity.cloudFrontOriginAccessIdentityS3CanonicalUserId),
-//         ],
-//       })
-//     );
-
-//     // CloudFront Distribution using OAI and website endpoint
-//     new cloudfront.CloudFrontWebDistribution(this, "AppDistribution", {
-//       originConfigs: [
-//         {
-//           s3OriginSource: {
-//             s3BucketSource: siteBucket,
-//             originAccessIdentity: originAccessIdentity,
-//           },
-//           behaviors: [
-//             {
-//               isDefaultBehavior: true,
-//               compress: true,
-//               viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-//             },
-//           ],
-//         },
-//       ],
-//       errorConfigurations: [
-//         {
-//           errorCode: 404,
-//           responseCode: 200,
-//           responsePagePath: "/index.html",
-//           errorCachingMinTtl: 300,
-//         },
-//       ],
-//       comment: `buzzbrain-app-distribution-${envName}`,
-//       defaultRootObject: "index.html",
-//     });
-//   }
-// }

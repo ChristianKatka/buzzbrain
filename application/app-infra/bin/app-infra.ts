@@ -40,5 +40,7 @@ if (currentAccount && currentAccount !== envConfig.account) {
 
 // Deploy the stack with env-specific config
 new AppInfraStack(app, `BuzzBrainAppInfra-${envName}`, {
+  stackName: `buzzbrain-${envName}---app-infra`,
+  env: envConfig, // ✅ this is what sets the AWS region + account
   envName,
 });

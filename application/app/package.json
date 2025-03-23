@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "deleteobjectsins3": "aws s3 rm s3://buzzbrain-app-staging  --recursive",
     "copytos3": "aws s3 cp dist s3://buzzbrain-app-staging  --recursive",
-    "invalidate-cf-cache": "aws cloudfront create-invalidation --distribution-id EOWH6N309UPIN --paths /index.html",
+    "invalidate-cf-cache": "aws cloudfront create-invalidation --distribution-id EOWH6N309UPIN --paths /*",
     "deploy": "npm run build && npm run deleteobjectsins3 && npm run copytos3 && npm run invalidate-cf-cache"
   },
   "dependencies": {
