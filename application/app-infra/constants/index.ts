@@ -6,7 +6,7 @@ export const getCognitoUserPoolId = (envName: string) => {
     return "";
   }
   if (envName === "staging") {
-    return "eu-north-1_4jMUdW1jV";
+    return "eu-north-1_roCFnzGEP";
   }
   return "";
 };
@@ -16,7 +16,7 @@ export const getCognitoClientId = (envName: string) => {
     return "";
   }
   if (envName === "staging") {
-    return "rijf1fijtuqfalv204qiejl8n";
+    return "4q7lccaqh57mpbtmgjph302vto";
   }
   return "";
 };

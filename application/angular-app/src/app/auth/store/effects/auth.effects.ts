@@ -25,14 +25,19 @@ export const refreshTokensEffect = createEffect(
       ofType(AuthActions.RefreshTokens.initiate),
       withLatestFrom(store.select(AuthTokensSelectors.getRefreshToken)),
       switchMap(([action, refreshToken]) => {
-        console.log('EFFECTI KUTSUTAAN');
-
         if (!refreshToken) {
           // When there is no refresh token, user is not authenticated so logout
           return of(AuthActions.Logout());
         }
         return authService.refreshTokens(refreshToken).pipe(
-          map((response) => AuthActions.RefreshTokens.success({ response })),
+          map((response) => {
+            if (response?.error) {
+              return AuthActions.RefreshTokens.error({
+                error: response.errorMessage,
+              });
+            }
+            return AuthActions.RefreshTokens.success({ response });
+          }),
           catchError((error) => of(AuthActions.RefreshTokens.error({ error })))
         );
       })
@@ -63,7 +68,15 @@ export const registerEffect = createEffect(
       ofType(AuthActions.Register.initiate),
       switchMap(({ credentials }) =>
         authService.register(credentials).pipe(
-          map((response) => AuthActions.Register.success({ response })),
+          map((response) => {
+            if (response?.error) {
+              return AuthActions.Register.error({
+                error: {},
+                errorMessage: response.errorMessage,
+              });
+            }
+            return AuthActions.Register.success({ response });
+          }),
           catchError((error) =>
             of(AuthActions.Register.error({ error, errorMessage: '' }))
           )

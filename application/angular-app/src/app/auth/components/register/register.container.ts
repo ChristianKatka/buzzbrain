@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { RegisterFormComponent } from './register-form/register-form.component';
-import { AuthUiSelectors } from '../../store/selectors';
-import { AuthCredentials } from '../../models/auth-credentials.model';
+import { SignUpCredentials } from '../../models/sign-up-credentials.model';
 import { AuthActions } from '../../store/actions';
+import { AuthUiSelectors } from '../../store/selectors';
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 @Component({
   standalone: true,
@@ -18,7 +18,7 @@ export class RegisterContainerComponent {
     AuthUiSelectors.getAuthControlData
   );
 
-  register(credentials: AuthCredentials) {
+  register(credentials: SignUpCredentials) {
     this.store.dispatch(AuthActions.Register.initiate({ credentials }));
   }
 }

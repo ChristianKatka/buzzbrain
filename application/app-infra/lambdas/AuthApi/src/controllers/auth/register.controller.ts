@@ -1,24 +1,27 @@
 import { Context, Next } from "koa";
-import { adminConfirmSignUpCommandService } from "../../services/auth/admin-confirm-sign-up-command.service";
-import { signUpCommandService } from "../../services/auth/sign-up-command.service";
 import { adminInitiateAuthCommandService } from "../../services/auth/admin-initiate-auth-command.service";
+import { signUpCommandService } from "../../services/auth/sign-up-command.service";
+import { v4 } from "uuid";
+import { createUser } from "../../services/dynamodb/create-user.service";
 
 export const register = async (ctx: Context, next: Next) => {
   const email = (ctx.request.body as any).email;
   const password = (ctx.request.body as any).password;
+  const restaurant = (ctx.request.body as any).restaurant;
 
   try {
+    const user = { id: v4(), email, pass: password, restaurant };
+
     // signup AKA register to cognito
     const signUpResponse = await signUpCommandService(email, password);
-
-    // admin confirm given user. (now no need for user to verify itself via email)
-    const confirmSignUpResponse = await adminConfirmSignUpCommandService(email);
 
     // authenticate given user -> get back tokens
     const loginAuthResponse = await adminInitiateAuthCommandService(
       email,
       password
     );
+
+    await createUser(user);
 
     ctx.response.body = loginAuthResponse;
   } catch (error) {

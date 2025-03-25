@@ -28,4 +28,13 @@ export const createRoleAndPolicies = (stack: Construct) => {
       resources: ["*"],
     })
   );
+
+  // Allow access to Cognito
+  lambdaExecutionRole.addToPolicy(
+    new iam.PolicyStatement({
+      effect: iam.Effect.ALLOW,
+      actions: ["dynamodb:*"],
+      resources: ["*"],
+    })
+  );
 };

@@ -4,11 +4,13 @@ import { Construct } from "constructs";
 export const createUserPool = (stack: Construct, envName: string) => {
   const userPool = new cognito.UserPool(stack, "UserPool", {
     userPoolName: `${envName}---user-pool`,
-    signInAliases: {
-      email: true,
-    },
-    selfSignUpEnabled: true, // 👈 Allow users to sign themselves up
-    autoVerify: { email: true },
+    email: cognito.UserPoolEmail.withCognito(),
+    // signInAliases: {
+    //   email: true,
+    // },
+    selfSignUpEnabled: true,
+    // autoVerify: { email: true },
+    accountRecovery: cognito.AccountRecovery.NONE,
     passwordPolicy: {
       minLength: 6,
       requireUppercase: false,

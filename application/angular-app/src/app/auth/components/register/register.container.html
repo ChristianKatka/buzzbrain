@@ -1,13 +1,15 @@
-<div>
-  <section>
-    <object data="/login.svg" type="image/svg+xml"></object>
-  </section>
+<main>
+  <div>
+    <section>
+      <object data="/login.svg" type="image/svg+xml"></object>
+    </section>
 
-  <h1 style="margin-top: 4rem; text-align: center">Register</h1>
+    <h1 style="margin-top: 4rem; text-align: center">Register</h1>
 
-  <app-register-form
-    [isLoading]="authUiControlData().isLoading"
-    [errorMessage]="authUiControlData().errorMessage"
-    (register)="register($event)"
-  ></app-register-form>
-</div>
+    <app-register-form
+      [isLoading]="authUiControlData().isLoading"
+      [errorMessage]="authUiControlData().errorMessage"
+      (register)="register($event)"
+    ></app-register-form>
+  </div>
+</main>

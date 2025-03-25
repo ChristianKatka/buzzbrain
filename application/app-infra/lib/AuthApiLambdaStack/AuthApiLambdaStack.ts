@@ -36,7 +36,7 @@ export class AuthApiLambdaStack extends Stack {
     // 2. Add Cognito permissions (same as SAM template)
     lambdaRole.addToPolicy(
       new iam.PolicyStatement({
-        actions: ["cognito-idp:*"],
+        actions: ["cognito-idp:*", "dynamodb:*"],
         resources: ["*"],
       })
     );
@@ -53,6 +53,7 @@ export class AuthApiLambdaStack extends Stack {
       environment: {
         COGNITO_USER_POOL_ID: getCognitoUserPoolId(envName),
         COGNITO_CLIENT_ID: getCognitoClientId(envName),
+        ENVIRONMENT_NAME: envName,
       },
     });
 

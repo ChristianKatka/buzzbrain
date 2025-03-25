@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { AuthCredentials } from '../models/auth-credentials.model';
+import { SignUpCredentials } from '../models/sign-up-credentials.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -15,7 +16,7 @@ export class AuthService {
     );
   }
 
-  register(credentials: AuthCredentials): Observable<any> {
+  register(credentials: SignUpCredentials): Observable<any> {
     return this.http.post(
       `${environment.authApiBaseUrl}/auth/register`,
       credentials

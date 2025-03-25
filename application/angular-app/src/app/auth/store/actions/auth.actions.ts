@@ -5,6 +5,7 @@ import {
   props,
 } from '@ngrx/store';
 import { AuthCredentials } from '../../models/auth-credentials.model';
+import { SignUpCredentials } from '../../models/sign-up-credentials.model';
 
 export const RefreshTokens = createActionGroup({
   source: '[Auth] Refresh Tokens',
@@ -18,7 +19,7 @@ export const RefreshTokens = createActionGroup({
 export const Register = createActionGroup({
   source: '[Auth] Register',
   events: {
-    Initiate: props<{ credentials: AuthCredentials }>(),
+    Initiate: props<{ credentials: SignUpCredentials }>(),
     Success: props<{ response: any }>(),
     Error: props<{ error: any; errorMessage: string }>(),
   },

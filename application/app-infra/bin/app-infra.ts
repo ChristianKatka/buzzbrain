@@ -4,6 +4,7 @@ import { AllBucketsStack } from "../lib/AllBucketsStack/AllBucketsStack";
 import { CdnForAppStack } from "../lib/CdnForApp/CdnForAppStack";
 import { CognitoStack } from "../lib/CognitoStack/CognitoStack";
 import { AuthApiLambdaStack } from "../lib/AuthApiLambdaStack/AuthApiLambdaStack";
+import { DynamoDBTablesStack } from "../lib/DynamoDBTablesStack/DynamoDBTablesStack";
 
 // Create CDK app
 const app = new cdk.App();
@@ -62,9 +63,14 @@ new CognitoStack(app, `CognitoStack-${envName}`, {
   envName,
 });
 
-// This needs to run last by itself. take pool ids and insert them in constants file after cognito is created
 new AuthApiLambdaStack(app, `AuthApiLambdaStack-${envName}`, {
   stackName: `${envName}---auth-api-lambda`,
+  env: envConfig, // ✅ this is what sets the AWS region + account
+  envName,
+});
+
+new DynamoDBTablesStack(app, `DynamoDBTablesStack-${envName}`, {
+  stackName: `${envName}---dynamodb-tables`,
   env: envConfig, // ✅ this is what sets the AWS region + account
   envName,
 });

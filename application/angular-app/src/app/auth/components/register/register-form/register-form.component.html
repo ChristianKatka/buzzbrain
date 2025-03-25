@@ -4,6 +4,15 @@
 <form class="flex-column align-center-center" [formGroup]="registerForm">
   <mat-form-field appearance="outline">
     <mat-error *ngIf="registerForm.get('email')?.hasError('required')"
+      >Ravintolan nimi vaaditaan</mat-error
+    >
+    <mat-label>Ravintola</mat-label>
+    <input matInput maxlength="40" type="text" formControlName="restaurant" />
+    <mat-icon class="material-icons-outlined" matPrefix>storefront</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-error *ngIf="registerForm.get('email')?.hasError('required')"
       >Email is required</mat-error
     >
     <mat-error *ngIf="registerForm.get('email')?.hasError('email')">

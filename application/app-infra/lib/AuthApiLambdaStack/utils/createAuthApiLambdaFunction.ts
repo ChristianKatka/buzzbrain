@@ -22,6 +22,7 @@ export const createAuthApiLambdaFunction = (
     environment: {
       COGNITO_USER_POOL_ID: getCognitoUserPoolId(envName),
       COGNITO_CLIENT_ID: getCognitoClientId(envName),
+      ENVIRONMENT: envName,
     },
   });
 
