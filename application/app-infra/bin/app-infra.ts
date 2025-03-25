@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 import * as cdk from "aws-cdk-lib";
-import { AppInfraStack } from "../lib/app-infra-stack";
+import { AllBucketsStack } from "../lib/AllBucketsStack/AllBucketsStack";
+import { CdnForAppStack } from "../lib/CdnForApp/CdnForAppStack";
+import { CognitoStack } from "../lib/CognitoStack/CognitoStack";
+import { AuthApiLambdaStack } from "../lib/AuthApiLambdaStack/AuthApiLambdaStack";
 
 // Create CDK app
 const app = new cdk.App();
@@ -38,9 +41,30 @@ if (currentAccount && currentAccount !== envConfig.account) {
   );
 }
 
-// Deploy the stack with env-specific config
-new AppInfraStack(app, `BuzzBrainAppInfra-${envName}`, {
-  stackName: `buzzbrain-${envName}---app-infra`,
+// --------------------------
+// START OF STACKS
+
+new AllBucketsStack(app, `AllBucketsStack-${envName}`, {
+  stackName: `${envName}---all-buckets`,
+  env: envConfig, // ✅ this is what sets the AWS region + account
+  envName,
+});
+
+new CdnForAppStack(app, `CdnForAppStack-${envName}`, {
+  stackName: `${envName}---cdn-for-app`,
+  env: envConfig, // ✅ this is what sets the AWS region + account
+  envName,
+});
+
+new CognitoStack(app, `CognitoStack-${envName}`, {
+  stackName: `${envName}---cognito`,
+  env: envConfig, // ✅ this is what sets the AWS region + account
+  envName,
+});
+
+// This needs to run last by itself. take pool ids and insert them in constants file after cognito is created
+new AuthApiLambdaStack(app, `AuthApiLambdaStack-${envName}`, {
+  stackName: `${envName}---auth-api-lambda`,
   env: envConfig, // ✅ this is what sets the AWS region + account
   envName,
 });
