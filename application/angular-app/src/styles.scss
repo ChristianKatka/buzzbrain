@@ -1,0 +1,44 @@
+/* styles.scss or styles.css */
+app-root {
+  display: block;
+  transform: scale(0.7); /* 70% zoom level */
+  transform-origin: top left;
+  width: 142.86%; /* Compensation math: 100% / 0.7 ≈ 142.86% */
+  height: 142.86%;
+
+  /* Fix for potential scrollbar/overflow issues */
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+/* Optional: Prevent body scrollbars during initial render */
+body {
+  overflow: hidden;
+  margin: 0;
+  min-height: 100vh;
+}
+*:not(mat-icon) {
+  font-family: "Inter", sans-serif !important;
+}
+
+@mixin disable-auto-zoom-on-iphone-input-fields {
+  /*
+   * disable auto-zoom on iphone input field focus
+   * http://www.456bereastreet.com/archive/201212/ios_webkit_browsers_and_auto-zooming_form_controls/
+  */
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  textarea:focus {
+    font-size: 16px;
+  }
+
+  /* disable auto-zoom on iphone input field focus */
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    select:focus,
+    textarea:focus,
+    input:focus {
+      font-size: 16px;
+    }
+  }
+}

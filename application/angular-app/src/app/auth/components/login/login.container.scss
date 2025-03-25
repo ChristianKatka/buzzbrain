@@ -1,0 +1,16 @@
+main {
+  display: flex;
+  justify-content: center; // horizontal centering
+  align-items: center; // vertical centering
+  height: 100vh; // optional: makes main fill the viewport
+}
+
+div {
+  width: 400px;
+  height: 400px;
+}
+
+object {
+  width: 15rem;
+  margin-top: 4rem;
+}

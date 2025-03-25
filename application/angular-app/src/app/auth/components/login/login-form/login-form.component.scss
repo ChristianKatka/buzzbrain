@@ -1,0 +1,35 @@
+@use "../../../../../styles.scss" as styles;
+@include styles.disable-auto-zoom-on-iphone-input-fields;
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+// mat-form-field {
+//   width: 100%;
+//   margin: 10px 0;
+// }
+
+// button {
+//   margin-top: 1rem;
+//   margin-bottom: 2rem;
+//   width: 100%;
+// }
+
+// mat-icon {
+//   color: gray;
+// }
+
+// b {
+//   cursor: pointer;
+//   color: blue;
+// }
+
+// .toggleShowPasswordButton {
+//   cursor: pointer;
+// }
+
+// span {
+//   color: gray;
+// }

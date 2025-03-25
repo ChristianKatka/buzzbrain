@@ -1,0 +1,2 @@
+STAGING distributionId ERQLFIYH6MMYP
+PRODUCTION distributionId

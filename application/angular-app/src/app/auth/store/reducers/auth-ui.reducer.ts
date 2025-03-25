@@ -1,0 +1,50 @@
+import { createReducer, on } from '@ngrx/store';
+import { AuthActions } from '../actions/index';
+
+export interface AuthUiState {
+  isLoading: boolean;
+  error: any;
+  errorMessage: string | undefined;
+}
+
+export const initialState: AuthUiState = {
+  isLoading: false,
+  error: undefined,
+  errorMessage: undefined,
+};
+
+export const authUiReducer = createReducer(
+  initialState,
+  on(AuthActions.Login.initiate, AuthActions.Register.initiate, (state) => {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }),
+  on(
+    AuthActions.Login.success,
+    AuthActions.Register.success,
+    (state, { response }) => {
+      return {
+        ...state,
+        isLoading: false,
+        error: undefined,
+        errorMessage: undefined,
+      };
+    }
+  ),
+  on(
+    AuthActions.Login.error,
+    AuthActions.Register.error,
+    (state, { error, errorMessage }) => {
+      return {
+        ...state,
+        isLoading: false,
+        error,
+        errorMessage,
+      };
+    }
+  ),
+
+  on(AuthActions.Logout, () => initialState)
+);
