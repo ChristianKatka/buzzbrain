@@ -1,15 +1,15 @@
 /* styles.scss or styles.css */
 app-root {
-  display: block;
-  transform: scale(0.7); /* 70% zoom level */
-  transform-origin: top left;
-  width: 142.86%; /* Compensation math: 100% / 0.7 ≈ 142.86% */
-  height: 142.86%;
+  // display: block;
+  // transform: scale(0.7); /* 70% zoom level */
+  // transform-origin: top left;
+  // width: 142.86%; /* Compensation math: 100% / 0.7 ≈ 142.86% */
+  // height: 142.86%;
 
-  /* Fix for potential scrollbar/overflow issues */
-  position: relative;
-  left: 0;
-  top: 0;
+  // /* Fix for potential scrollbar/overflow issues */
+  // position: relative;
+  // left: 0;
+  // top: 0;
 }
 
 /* Optional: Prevent body scrollbars during initial render */

@@ -9,7 +9,6 @@ import { DynamoDBTablesStack } from "../lib/DynamoDBTablesStack/DynamoDBTablesSt
 // Create CDK app
 const app = new cdk.App();
 
-// Get env from context (passed via -c env=staging or env=prod)
 const envName = app.node.tryGetContext("env");
 
 if (!envName) {
