@@ -46,7 +46,42 @@ export class SideNavComponent {
       title: 'Big Deal',
       text: 'Pelaa korttisi oikein, oikealla asenteella.',
     },
-    // POIISTA::
+    {
+      image: 'sport-quiz.jpg',
+      alt: 'sportti-visa',
+      title: 'Sportti visa',
+      text: 'Sportti visa hulvattomilla kysymyksillä, hupia ja taitoa',
+    },
+    {
+      image: 'jukebox-bingo.jpg',
+      alt: 'jukebox-bingo',
+      title: 'Jukebox bingo',
+      text: 'Nopeatempoinen musiikkibingo, jossa numerot on korvattu kappaleilla.',
+    },
+    {
+      image: 'pub-quiz.jpg',
+      alt: 'pub-quiz',
+      title: 'The pub quiz',
+      text: 'Nopeasti etenevä yleistietovisa.',
+    },
+    {
+      image: 'big-cards.jpg',
+      alt: 'big-cards',
+      title: 'Big Deal',
+      text: 'Pelaa korttisi oikein, oikealla asenteella.',
+    },
+    {
+      image: 'sport-quiz.jpg',
+      alt: 'sportti-visa',
+      title: 'Sportti visa',
+      text: 'Sportti visa hulvattomilla kysymyksillä, hupia ja taitoa',
+    },
+    {
+      image: 'jukebox-bingo.jpg',
+      alt: 'jukebox-bingo',
+      title: 'Jukebox bingo',
+      text: 'Nopeatempoinen musiikkibingo, jossa numerot on korvattu kappaleilla.',
+    },
     {
       image: 'pub-quiz.jpg',
       alt: 'pub-quiz',
@@ -60,6 +95,18 @@ export class SideNavComponent {
       text: 'Pelaa korttisi oikein, oikealla asenteella.',
     },
     {
+      image: 'sport-quiz.jpg',
+      alt: 'sportti-visa',
+      title: 'Sportti visa',
+      text: 'Sportti visa hulvattomilla kysymyksillä, hupia ja taitoa',
+    },
+    {
+      image: 'jukebox-bingo.jpg',
+      alt: 'jukebox-bingo',
+      title: 'Jukebox bingo',
+      text: 'Nopeatempoinen musiikkibingo, jossa numerot on korvattu kappaleilla.',
+    },
+    {
       image: 'pub-quiz.jpg',
       alt: 'pub-quiz',
       title: 'The pub quiz',
@@ -72,16 +119,16 @@ export class SideNavComponent {
       text: 'Pelaa korttisi oikein, oikealla asenteella.',
     },
     {
-      image: 'pub-quiz.jpg',
-      alt: 'pub-quiz',
-      title: 'The pub quiz',
-      text: 'Nopeasti etenevä yleistietovisa.',
+      image: 'sport-quiz.jpg',
+      alt: 'sportti-visa',
+      title: 'Sportti visa',
+      text: 'Sportti visa hulvattomilla kysymyksillä, hupia ja taitoa',
     },
     {
-      image: 'big-cards.jpg',
-      alt: 'big-cards',
-      title: 'Big Deal',
-      text: 'Pelaa korttisi oikein, oikealla asenteella.',
+      image: 'jukebox-bingo.jpg',
+      alt: 'jukebox-bingo',
+      title: 'Jukebox bingo',
+      text: 'Nopeatempoinen musiikkibingo, jossa numerot on korvattu kappaleilla.',
     },
     {
       image: 'pub-quiz.jpg',
