@@ -1,27 +1,30 @@
 import { Routes } from '@angular/router';
-import { AuthenticatedGuard } from './auth/guards/authenticated.guard';
-import { UnauthenticatedGuard } from './auth/guards/unauthenticated.guard';
-import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { JukeboxBingoComponent } from './jukebox-bingo/jukebox-bingo.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { LoginContainerComponent } from './auth/components/login/login.container';
-import { RegisterContainerComponent } from './auth/components/register/register.container';
+import { JBVisaComponent } from './jukebox-bingo/jb-visa/jb-visa.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    component: DashboardComponent,
     pathMatch: 'full',
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
     // canActivate: [AuthenticatedGuard],
   },
   {
     path: 'welcome',
     component: WelcomeComponent,
   },
+  {
+    path: 'jukebox-bingo',
+    component: JukeboxBingoComponent,
+  },
+  {
+    path: 'jukebox-bingo/visa',
+    component: JBVisaComponent,
+  },
+
   // {
   //   path: 'login',
   //   component: LoginContainerComponent,

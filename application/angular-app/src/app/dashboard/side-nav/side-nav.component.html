@@ -39,7 +39,13 @@
                   {{ quiz.text }}
                 </p>
               </div>
-              <button mat-raised-button class="w-full mt-2">Avaa</button>
+              <button
+                [routerLink]="[quiz.urlRoute]"
+                mat-raised-button
+                class="w-full mt-2"
+              >
+                Avaa
+              </button>
             </div>
           </div>
           }

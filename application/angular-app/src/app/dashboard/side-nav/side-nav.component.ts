@@ -5,11 +5,13 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { SideNavContentComponent } from './side-nav-content/side-nav-content.component';
 import { ContentHeaderComponent } from './content-header/content-header.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-side-nav',
   imports: [
     CommonModule,
+    RouterModule,
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
@@ -33,6 +35,7 @@ export class SideNavComponent {
       alt: 'jukebox-bingo',
       title: 'Jukebox bingo',
       text: 'Nopeatempoinen musiikkibingo, jossa numerot on korvattu kappaleilla.',
+      urlRoute: 'jukebox-bingo',
     },
     {
       image: 'pub-quiz.jpg',

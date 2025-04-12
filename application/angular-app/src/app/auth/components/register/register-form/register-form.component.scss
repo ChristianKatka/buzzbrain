@@ -1,4 +1,4 @@
-@use "../../../../../styles.scss" as styles;
+@use "../../../../../styles/mixins/mixins.scss" as styles;
 @include styles.disable-auto-zoom-on-iphone-input-fields;
 
 mat-form-field {
