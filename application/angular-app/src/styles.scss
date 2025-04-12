@@ -1,3 +1,7 @@
+@use "tailwindcss/base";
+@use "tailwindcss/components";
+@use "tailwindcss/utilities";
+
 /* styles.scss or styles.css */
 app-root {
   // display: block;
@@ -41,4 +45,14 @@ body {
       font-size: 16px;
     }
   }
+}
+
+// CUSTOM SCROLLBARS
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 4px;
 }

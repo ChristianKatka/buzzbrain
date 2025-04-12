@@ -1,21 +1,50 @@
-<!-- <main>
-  <section>
-    <div>
-      <button mat-button>text</button>
+<main class="min-h-screen flex flex-row p-4 box-border gap-4">
+  <!-- Side Navigation (static height reference) -->
+  <div
+    class="hidden md:flex w-64 flex-col p-3 rounded-xl border border-gray-200/50 shadow-md h-[calc(100vh-2rem)]"
+  >
+    <!-- 2rem = p-4 top+bottom -->
+    <div class="flex-1">
+      <app-side-nav-content class="h-full flex flex-col"></app-side-nav-content>
     </div>
-  </section>
-</main> -->
+  </div>
 
-<div class="layout">
-  <aside class="sidebar">
-    <!-- Sidebar content -->
-    <nav>...</nav>
-  </aside>
-  <main class="content">
-    <div>
-      <p>Venue name</p>
+  <!-- Content Area (matches sidebar height) -->
+  <div
+    class="flex-1 flex flex-col rounded-xl overflow-hidden h-[calc(100vh-2rem)]"
+  >
+    <app-content-header class="z-10"></app-content-header>
+
+    <!-- Scrollable content container -->
+    <div class="flex-1 overflow-auto">
+      <div class="py-4">
+        <div
+          class="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 min-h-0"
+        >
+          @for (quiz of quizes; track $index) {
+          <div
+            class="border border-gray-200/50 rounded-xl p-3 overflow-hidden shadow-md"
+          >
+            <img
+              [src]="quiz.image"
+              [alt]="quiz.alt"
+              class="w-full h-auto object-contain rounded-xl shadow-md"
+            />
+            <div class="p-3 space-y-2">
+              <p class="font-bold text-lg text-gray-900 truncate">
+                {{ quiz.title }}
+              </p>
+              <div class="min-h-10">
+                <p class="text-sm text-gray-600 line-clamp-2">
+                  {{ quiz.text }}
+                </p>
+              </div>
+              <button mat-raised-button class="w-full mt-2">Avaa</button>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
     </div>
-
-    <section><p>my card</p></section>
-  </main>
-</div>
+  </div>
+</main>

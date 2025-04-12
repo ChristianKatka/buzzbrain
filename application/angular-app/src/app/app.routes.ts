@@ -16,22 +16,22 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthenticatedGuard],
+    // canActivate: [AuthenticatedGuard],
   },
   {
     path: 'welcome',
     component: WelcomeComponent,
   },
-  {
-    path: 'login',
-    component: LoginContainerComponent,
-    canActivate: [UnauthenticatedGuard],
-  },
-  {
-    path: 'register',
-    component: RegisterContainerComponent,
-    canActivate: [UnauthenticatedGuard],
-  },
+  // {
+  //   path: 'login',
+  //   component: LoginContainerComponent,
+  //   canActivate: [UnauthenticatedGuard],
+  // },
+  // {
+  //   path: 'register',
+  //   component: RegisterContainerComponent,
+  //   canActivate: [UnauthenticatedGuard],
+  // },
   {
     path: '**',
     component: NotFoundComponent,

@@ -1,0 +1,29 @@
+<section class="border border-gray-200/50 rounded-xl shadow-md">
+  <!-- Add flex-col for mobile, keep row for larger screens -->
+  <div
+    class="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center p-3 rounded-xl gap-3 lg:gap-0"
+  >
+    <p class="font-bold text-lg">Ravintolan Nimi</p>
+
+    <div class="flex items-center">
+      <p class="text-sm mr-1">Ostetut Pelit:</p>
+      <pre class="font-bold">{{ "ei saatavilla" | json }}</pre>
+      <!-- <p class="text-sm font-bold">3</p> -->
+    </div>
+
+    <div class="flex items-center">
+      <p class="text-sm mr-1">Pelatut Pelit:</p>
+      <pre class="font-bold">{{ "ei saatavilla" | json }}</pre>
+
+      <!-- <p class="text-sm font-bold">7</p> -->
+    </div>
+
+    <div class="flex items-center">
+      <p class="text-sm mr-1">Tilaus aktiivinen:</p>
+      <pre class="font-bold">{{ "ei saatavilla asti" | json }}</pre>
+
+      <!-- <p class="text-sm font-bold mr-1">01.01.2028</p>-->
+      <!-- <p class="text-sm">asti</p> -->
+    </div>
+  </div>
+</section>
