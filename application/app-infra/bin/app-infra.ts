@@ -22,7 +22,7 @@ const environments: Record<string, cdk.Environment> = {
     region: "eu-north-1",
   },
   production: {
-    account: "222222222222",
+    account: "754601549060",
     region: "eu-north-1",
   },
 };
