@@ -1,40 +1,11 @@
 import { Routes } from '@angular/router';
-
-// export const routes: Routes = [
-//   {
-//     path: '',
-//     component: DashboardComponent,
-//     pathMatch: 'full',
-//     // canActivate: [AuthenticatedGuard],
-//   },
-//   {
-//     path: 'welcome',
-//     component: WelcomeComponent,
-//   },
-//   {
-//     path: 'jukebox-bingo',
-//     component: JukeboxBingoComponent,
-//   },
-//   {
-//     path: 'jukebox-bingo/visa',
-//     component: JBVisaComponent,
-//   },
-
-// {
-//   path: 'login',
-//   component: LoginContainerComponent,
-//   canActivate: [UnauthenticatedGuard],
-// },
-// {
-//   path: 'register',
-//   component: RegisterContainerComponent,
-//   canActivate: [UnauthenticatedGuard],
-// },
-// ];
+import { AuthenticatedGuard } from './auth/guards/authenticated.guard';
+import { UnauthenticatedGuard } from './auth/guards/unauthenticated.guard';
 
 export const routes: Routes = [
   {
     path: 'dashboard',
+    canActivate: [AuthenticatedGuard],
     loadComponent: () =>
       import('./dashboard/dashboard.component').then(
         (m) => m.DashboardComponent
@@ -42,6 +13,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        canActivate: [AuthenticatedGuard],
         loadComponent: () =>
           import(
             './dashboard/side-nav/pages/home-game-categories/home-game-categories.component'
@@ -49,6 +21,7 @@ export const routes: Routes = [
       },
       {
         path: 'billing',
+        canActivate: [AuthenticatedGuard],
         loadComponent: () =>
           import('./dashboard/side-nav/pages/billing/billing.component').then(
             (m) => m.BillingComponent
@@ -56,6 +29,7 @@ export const routes: Routes = [
       },
       {
         path: 'settings',
+        canActivate: [AuthenticatedGuard],
         loadComponent: () =>
           import('./dashboard/side-nav/pages/settings/settings.component').then(
             (m) => m.SettingsComponent
@@ -63,6 +37,25 @@ export const routes: Routes = [
       },
     ],
   },
+
+  {
+    path: 'login',
+    canActivate: [UnauthenticatedGuard],
+    loadComponent: () =>
+      import('./auth/components/login/login.container').then(
+        (m) => m.LoginContainerComponent
+      ),
+  },
+
+  {
+    path: 'register',
+    canActivate: [UnauthenticatedGuard],
+    loadComponent: () =>
+      import('./auth/components/register/register.container').then(
+        (m) => m.RegisterContainerComponent
+      ),
+  },
+
   // {
   //   path: 'games',
   //   loadComponent: () =>

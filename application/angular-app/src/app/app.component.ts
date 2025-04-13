@@ -15,6 +15,6 @@ export class AppComponent implements OnInit {
   store = inject(Store);
 
   ngOnInit(): void {
-    // this.store.dispatch(AuthActions.RefreshTokens.initiate());
+    this.store.dispatch(AuthActions.RefreshTokens.initiate());
   }
 }

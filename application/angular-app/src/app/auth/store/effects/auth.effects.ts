@@ -130,7 +130,15 @@ export const loginOrRefreshTokensSuccessEffect = createEffect(
     return actions$.pipe(
       ofType(AuthActions.Login.success, AuthActions.RefreshTokens.success),
       tap(() => {
-        router.navigate(['/home']);
+        const currentUrl = router.url;
+
+        const isAuthPage =
+          currentUrl === '/login' || currentUrl === '/register';
+
+        if (isAuthPage) {
+          router.navigate(['/']);
+        }
+        // Else: stay on the same page
       })
     );
   },

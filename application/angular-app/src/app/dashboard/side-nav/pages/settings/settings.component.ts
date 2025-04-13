@@ -1,11 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { Component, inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { Store } from '@ngrx/store';
+import { AuthActions } from '../../../../auth/store/actions';
 
 @Component({
   selector: 'app-settings',
-  imports: [MatIconModule, CommonModule],
+  imports: [MatButtonModule, CommonModule],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.scss',
 })
-export class SettingsComponent {}
+export class SettingsComponent {
+  store = inject(Store);
+  logOut() {
+    this.store.dispatch(AuthActions.Logout());
+  }
+}
