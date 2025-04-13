@@ -1,12 +1,21 @@
-<mat-toolbar color="primary" class="flex justify-between items-center px-4">
-  <!-- Logo on the left -->
-  <div class="flex items-center gap-2">
-    <img src="/JukeboxBingoLogo.png" alt="Logo" class="h-10 w-auto" />
-  </div>
+<div class="bg-white shadow-md px-2 py-1">
+  <div
+    class="flex flex-col sm:flex-row justify-between items-center gap-3 max-w-[1800px] mx-auto"
+  >
+    <div class="flex items-center gap-2">
+      <button mat-icon-button routerLink="/">
+        <mat-icon>arrow_back_ios</mat-icon>
+      </button>
+      <app-logo routerLink="/" [size]="'sm'" class="cursor-pointer"></app-logo>
+    </div>
 
-  <!-- Buttons on the right -->
-  <div class="flex gap-4">
-    <button mat-raised-button color="accent">Print Tickets</button>
-    <button mat-raised-button color="accent">Print Flyers</button>
+    <div class="flex items-center gap-2">
+      <img src="/JukeboxBingoLogo.png" alt="Logo" class="h-10 w-auto" />
+    </div>
+
+    <div class="flex gap-4">
+      <button mat-raised-button color="accent">Tulosta</button>
+      <button mat-raised-button color="accent">Tulosta mainos</button>
+    </div>
   </div>
-</mat-toolbar>
+</div>

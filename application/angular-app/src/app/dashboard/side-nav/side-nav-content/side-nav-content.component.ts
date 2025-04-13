@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { Router, RouterModule } from '@angular/router';
 import { LogoComponent } from '../../../../shared/components/logo/logo.component';
 import { MyButtonComponent } from '../../../../shared/components/my-button/my-button.component';
 
@@ -13,11 +14,17 @@ import { MyButtonComponent } from '../../../../shared/components/my-button/my-bu
     LogoComponent,
     MatIconModule,
     MatButtonModule,
-    MatDividerModule,
     MyButtonComponent,
     MatDividerModule,
+    RouterModule,
   ],
   templateUrl: './side-nav-content.component.html',
   styleUrl: './side-nav-content.component.scss',
 })
-export class SideNavContentComponent {}
+export class SideNavContentComponent {
+  router = inject(Router);
+
+  isActive(path: string): boolean {
+    return this.router.url === path;
+  }
+}

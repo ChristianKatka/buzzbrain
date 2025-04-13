@@ -5,17 +5,37 @@
       <p class="text-sm">v.1.2</p>
     </div>
 
-    <mat-divider class="pb-8" style="border-color: white"></mat-divider>
+    <mat-divider
+      class="pb-8"
+      style="border-color: rgb(220, 220, 220)"
+    ></mat-divider>
 
-    <app-my-button
-      [props]="{ isActive: true, icon: 'home', text: 'Koti' }"
-    ></app-my-button>
-    <app-my-button
-      [props]="{ isActive: false, icon: 'attach_money', text: 'Laskutus' }"
-    ></app-my-button>
-    <app-my-button
-      [props]="{ isActive: false, icon: 'settings', text: 'Asetukset' }"
-    ></app-my-button>
+    <div class="flex flex-col gap-1">
+      <app-my-button
+        routerLink="/dashboard"
+        [props]="{
+          isActive: isActive('/dashboard'),
+          icon: 'home',
+          text: 'Koti'
+        }"
+      ></app-my-button>
+      <app-my-button
+        routerLink="/dashboard/billing"
+        [props]="{
+          isActive: isActive('/dashboard/billing'),
+          icon: 'attach_money',
+          text: 'Laskutus'
+        }"
+      ></app-my-button>
+      <app-my-button
+        routerLink="/dashboard/settings"
+        [props]="{
+          isActive: isActive('/dashboard/settings'),
+          icon: 'settings',
+          text: 'Asetukset'
+        }"
+      ></app-my-button>
+    </div>
   </div>
 
   <footer class="pt-6 text-sm">&#169; Pubi visa Oy</footer>
