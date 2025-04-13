@@ -1,7 +1,6 @@
 import { Context, Next } from "koa";
 import { adminInitiateAuthCommandService } from "../../services/auth/admin-initiate-auth-command.service";
 import { signUpCommandService } from "../../services/auth/sign-up-command.service";
-import { v4 } from "uuid";
 import { createUser } from "../../services/dynamodb/create-user.service";
 
 export const register = async (ctx: Context, next: Next) => {
@@ -10,7 +9,7 @@ export const register = async (ctx: Context, next: Next) => {
   const restaurant = (ctx.request.body as any).restaurant;
 
   try {
-    const user = { id: v4(), email, pass: password, restaurant };
+    const user = { email, pass: password, restaurant };
 
     // signup AKA register to cognito
     const signUpResponse = await signUpCommandService(email, password);

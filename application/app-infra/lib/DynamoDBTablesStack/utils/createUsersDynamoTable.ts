@@ -6,7 +6,7 @@ export const createUsersDynamoTable = (stack: Construct, envName: string) => {
   const table = new dynamodb.Table(stack, "UsersTable", {
     tableName,
     partitionKey: {
-      name: "id",
+      name: "email",
       type: dynamodb.AttributeType.STRING,
     },
     billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
