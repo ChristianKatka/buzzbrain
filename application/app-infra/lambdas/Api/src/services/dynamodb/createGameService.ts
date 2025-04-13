@@ -1,11 +1,11 @@
 import { PutCommand } from "@aws-sdk/lib-dynamodb";
-import { ENVIRONMENT_NAME } from "../../constants";
+import { GAMES_TABLE } from "../../constants";
 import { docClient } from "../../instances/aws";
 
-export const createUser = async (user: any) => {
+export const createGameService = async (game: any) => {
   const command = {
-    TableName: `${ENVIRONMENT_NAME}-users`,
-    Item: user,
+    TableName: GAMES_TABLE,
+    Item: game,
   };
   await docClient.send(new PutCommand(command));
 };
