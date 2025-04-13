@@ -1,5 +1,7 @@
 import { Stack, StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
+import { createGameCategoriesDynamoTable } from "./utils/createGameCategoriesDynamoTable";
+import { createGamesDynamoTable } from "./utils/createGamesDynamoTable";
 import { createUsersDynamoTable } from "./utils/createUsersDynamoTable";
 
 interface Props extends StackProps {
@@ -12,6 +14,8 @@ export class DynamoDBTablesStack extends Stack {
 
     const { envName } = props;
 
-    const userPool = createUsersDynamoTable(this, envName);
+    createUsersDynamoTable(this, envName);
+    createGameCategoriesDynamoTable(this, envName);
+    createGamesDynamoTable(this, envName);
   }
 }

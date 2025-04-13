@@ -4,11 +4,6 @@ import { Construct } from "constructs";
 export const createRoleAndPolicies = (stack: Construct) => {
   const lambdaRole = new iam.Role(stack, "LambdaExecutionRole", {
     assumedBy: new iam.ServicePrincipal("lambda.amazonaws.com"),
-    managedPolicies: [
-      iam.ManagedPolicy.fromAwsManagedPolicyName(
-        "service-role/AWSLambdaBasicExecutionRole"
-      ),
-    ],
   });
 
   lambdaRole.addToPolicy(
@@ -17,6 +12,5 @@ export const createRoleAndPolicies = (stack: Construct) => {
       resources: ["*"],
     })
   );
-
   return lambdaRole;
 };

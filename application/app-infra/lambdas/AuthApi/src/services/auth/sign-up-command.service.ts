@@ -15,7 +15,11 @@ export const signUpCommandService = async (email: string, password: string) => {
     MessageAction: "SUPPRESS", // ❌ disables email
   });
 
-  await cognitoClient.send(createCommand);
+  const createResponse = await cognitoClient.send(createCommand);
+
+  const sub = createResponse.User?.Attributes?.find(
+    (attr) => attr.Name === "sub"
+  )?.Value;
 
   // 2. Immediately set the password as permanent
   const setPasswordCommand = new AdminSetUserPasswordCommand({
@@ -27,5 +31,5 @@ export const signUpCommandService = async (email: string, password: string) => {
 
   await cognitoClient.send(setPasswordCommand);
 
-  return { success: true };
+  return { success: true, sub };
 };

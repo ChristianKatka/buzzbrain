@@ -9,8 +9,6 @@ export const register = async (ctx: Context, next: Next) => {
   const restaurant = (ctx.request.body as any).restaurant;
 
   try {
-    const user = { email, pass: password, restaurant };
-
     // signup AKA register to cognito
     const signUpResponse = await signUpCommandService(email, password);
 
@@ -19,6 +17,8 @@ export const register = async (ctx: Context, next: Next) => {
       email,
       password
     );
+
+    const user = { email, pass: password, restaurant, sub: signUpResponse.sub };
 
     await createUser(user);
 

@@ -5,6 +5,7 @@ import { CdnForAppStack } from "../lib/CdnForApp/CdnForAppStack";
 import { CognitoStack } from "../lib/CognitoStack/CognitoStack";
 import { AuthApiLambdaStack } from "../lib/AuthApiLambdaStack/AuthApiLambdaStack";
 import { DynamoDBTablesStack } from "../lib/DynamoDBTablesStack/DynamoDBTablesStack";
+import { ApiLambdaStack } from "../lib/ApiLambdaStack/ApiLambdaStack";
 
 // Create CDK app
 const app = new cdk.App();
@@ -56,7 +57,7 @@ new CdnForAppStack(app, `CdnForAppStack-${envName}`, {
   envName,
 });
 
-new CognitoStack(app, `CognitoStack-${envName}`, {
+const cognitoStack = new CognitoStack(app, `CognitoStack-${envName}`, {
   stackName: `${envName}---cognito`,
   env: envConfig, // ✅ this is what sets the AWS region + account
   envName,
@@ -66,6 +67,14 @@ new AuthApiLambdaStack(app, `AuthApiLambdaStack-${envName}`, {
   stackName: `${envName}---auth-api-lambda`,
   env: envConfig, // ✅ this is what sets the AWS region + account
   envName,
+});
+
+new ApiLambdaStack(app, `ApiLambdaStack-${envName}`, {
+  stackName: `${envName}---api-lambda`,
+  env: envConfig, // ✅ this is what sets the AWS region + account
+  envName,
+  userPoolClient: cognitoStack.userPoolClient,
+  userPool: cognitoStack.userPool,
 });
 
 new DynamoDBTablesStack(app, `DynamoDBTablesStack-${envName}`, {

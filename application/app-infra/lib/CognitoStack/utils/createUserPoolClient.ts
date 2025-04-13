@@ -7,10 +7,10 @@ export const createUserPoolClient = (
   envName: string,
   userPool: cognito.UserPool
 ) => {
-  new cognito.UserPoolClient(stack, "UserPoolClient", {
+  return new cognito.UserPoolClient(stack, "UserPoolClient", {
     userPoolClientName: `${envName}---user-pool-client`,
     userPool,
-    refreshTokenValidity: Duration.days(60), // 2 months
+    refreshTokenValidity: Duration.days(3650), // 10 years
     authFlows: {
       adminUserPassword: true,
       custom: false,
