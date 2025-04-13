@@ -1,6 +1,6 @@
 export const gameCategories = [
   {
-    categoryId: "sport-category",
+    categoryId: "sport",
     displayName: "Sports",
     description: "All about football, basketball, tennis, ice hockey, etc.",
     image: "",

@@ -39,6 +39,21 @@ export const routes: Routes = [
   },
 
   {
+    path: 'category/jukebox',
+    loadComponent: () =>
+      import('./jukebox-bingo/jukebox-bingo.component').then(
+        (m) => m.JukeboxBingoComponent
+      ),
+  },
+  {
+    path: 'category/jukebox/game',
+    loadComponent: () =>
+      import('./jukebox-bingo/jb-visa/jb-visa.component').then(
+        (m) => m.JBVisaComponent
+      ),
+  },
+
+  {
     path: 'login',
     canActivate: [UnauthenticatedGuard],
     loadComponent: () =>
@@ -56,18 +71,6 @@ export const routes: Routes = [
       ),
   },
 
-  // {
-  //   path: 'games',
-  //   loadComponent: () =>
-  //     import('./pages/games/games.component').then((m) => m.GamesComponent),
-  // },
-  // {
-  //   path: 'game/:id',
-  //   loadComponent: () =>
-  //     import('./pages/game-detail/game-detail.component').then(
-  //       (m) => m.GameDetailComponent
-  //     ),
-  // },
   {
     path: '',
     redirectTo: 'dashboard',

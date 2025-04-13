@@ -23,7 +23,7 @@ export class HomeGameCategoriesComponent {
       alt: 'jukebox-bingo',
       title: 'Jukebox bingo',
       text: 'Nopeatempoinen musiikkibingo, jossa numerot on korvattu kappaleilla.',
-      urlRoute: 'virhe',
+      urlRoute: '/category/jukebox',
     },
     {
       image: 'pub-quiz.jpg',
