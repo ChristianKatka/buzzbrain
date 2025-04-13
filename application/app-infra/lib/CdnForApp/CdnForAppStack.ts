@@ -1,4 +1,4 @@
-import { Stack, StackProps } from "aws-cdk-lib";
+import { CfnOutput, Stack, StackProps } from "aws-cdk-lib";
 import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import { Bucket } from "aws-cdk-lib/aws-s3";
 import { Construct } from "constructs";
@@ -41,5 +41,10 @@ export class CdnForAppStack extends Stack {
       originAccessIdentity,
       securityHeadersPolicy
     );
+
+    new CfnOutput(this, "OaiCanonicalUserId", {
+      value:
+        originAccessIdentity.cloudFrontOriginAccessIdentityS3CanonicalUserId,
+    });
   }
 }

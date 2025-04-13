@@ -30,10 +30,16 @@ export const createCloudFrontDistribution = (
     errorResponses: [
       // Handle SPA client-side routing
       {
-        httpStatus: 404,
+        httpStatus: 403,
         responseHttpStatus: 200,
         responsePagePath: "/index.html",
         ttl: Duration.seconds(0), // Do NOT cache error responses
+      },
+      {
+        httpStatus: 404,
+        responseHttpStatus: 200,
+        responsePagePath: "/index.html",
+        ttl: Duration.seconds(0),
       },
     ],
   });
