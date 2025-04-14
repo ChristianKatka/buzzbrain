@@ -9,3 +9,7 @@ export const getAuthControlData = createSelector(selectAuthUiState, (state) => {
     errorMessage: state.errorMessage,
   };
 });
+export const isInitialAppLoading = createSelector(
+  selectAuthUiState,
+  (state) => state.isInitialAppLoading
+);

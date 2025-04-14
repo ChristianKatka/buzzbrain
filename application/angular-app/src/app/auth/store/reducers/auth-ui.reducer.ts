@@ -2,12 +2,14 @@ import { createReducer, on } from '@ngrx/store';
 import { AuthActions } from '../actions/index';
 
 export interface AuthUiState {
+  isInitialAppLoading: boolean;
   isLoading: boolean;
   error: any;
   errorMessage: string | undefined;
 }
 
 export const initialState: AuthUiState = {
+  isInitialAppLoading: false,
   isLoading: false,
   error: undefined,
   errorMessage: undefined,
@@ -42,6 +44,26 @@ export const authUiReducer = createReducer(
         isLoading: false,
         error,
         errorMessage,
+      };
+    }
+  ),
+
+  // Initial splash screen loader
+  // so if user cant be on login screen and boom home because refresh tokens success
+  on(AuthActions.RefreshTokens.initiate, (state) => {
+    return {
+      ...state,
+      isInitialAppLoading: true,
+    };
+  }),
+  on(
+    AuthActions.RefreshTokens.error,
+    AuthActions.RefreshTokens.success,
+    AuthActions.Logout,
+    (state) => {
+      return {
+        ...state,
+        isInitialAppLoading: false,
       };
     }
   ),
