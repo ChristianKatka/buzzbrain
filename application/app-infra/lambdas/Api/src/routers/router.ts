@@ -11,5 +11,5 @@ export const router = new Router({
 router.get("/game-categories", getGameCategoriesController);
 router.post("/game-category", createGameCategoryController);
 
-router.get("/games/:gameCategory", getGamesController);
+router.get("/games/:categoryId", getGamesController);
 router.post("/game", createGameController);

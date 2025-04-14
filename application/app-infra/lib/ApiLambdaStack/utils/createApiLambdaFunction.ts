@@ -10,6 +10,7 @@ export const createApiLambdaFunction = (
   lambdaRole: Role
 ) => {
   const apiFunction = new NodejsFunction(stack, "API", {
+    functionName: `${envName}-api`,
     runtime: lambda.Runtime.NODEJS_20_X,
     entry: "lambdas/Api/src/lambda.ts", // Entry TypeScript file
     handler: "handler", // Exported function name
