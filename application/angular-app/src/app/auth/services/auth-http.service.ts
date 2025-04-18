@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { AuthTokensSelectors } from '../store/selectors';
+import { AuthTokensSelectors } from '../../../store/selectors';
 
 @Injectable({
   providedIn: 'root',

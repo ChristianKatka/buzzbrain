@@ -3,8 +3,8 @@ import { CanActivateFn } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
 import { filter, map, switchMap, take } from 'rxjs/operators';
-import { AuthActions } from '../store/actions';
-import { AuthTokensSelectors, AuthUiSelectors } from '../store/selectors';
+import { AuthActions } from '../../../store/actions';
+import { AuthTokensSelectors, AuthUiSelectors } from '../../../store/selectors';
 
 export const startupGuard: CanActivateFn = () => {
   const store = inject(Store);

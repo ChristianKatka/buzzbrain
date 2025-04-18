@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { jwtDecode } from 'jwt-decode';
-import { AuthActions } from '../actions';
+import { AuthActions } from '../../actions';
 import { includeExistingRefreshTokenWithNewTokens } from './utils/include-existing-refresh-token-with-new-tokens.util';
 
 export interface AuthTokensState {

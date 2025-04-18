@@ -1,15 +1,19 @@
-import * as awsServerlessExpress from "aws-serverless-express";
+// import * as awsServerlessExpress from "aws-serverless-express";
+// import { app } from "./app";
 
-import { app } from './app'
+// const server = awsServerlessExpress.createServer(app.callback());
 
-const serverless = (app) => (event, ctx) => {
-    awsServerlessExpress.proxy(
-        awsServerlessExpress.createServer(app.callback()),
-        event,
-        ctx
-    );
+// export const handler = (event, context) => {
+//   return awsServerlessExpress.proxy(server, event, context);
+// };
+
+import serverlessExpress from "@codegenie/serverless-express";
+import { app } from "./app";
+
+const options = {
+  app: app.callback(),
 };
 
-const handler = serverless(app);
+const handler = serverlessExpress(options);
 
 export { handler };

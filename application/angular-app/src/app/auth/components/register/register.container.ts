@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { AuthActions } from '../../../../store/actions';
+import { AuthUiSelectors } from '../../../../store/selectors';
 import { SignUpCredentials } from '../../models/sign-up-credentials.model';
-import { AuthActions } from '../../store/actions';
-import { AuthUiSelectors } from '../../store/selectors';
 import { RegisterFormComponent } from './register-form/register-form.component';
 
 @Component({

@@ -1,16 +1,25 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { gameCategoriesActions } from '../../../../../store/actions';
+import { GameCategoriesSkeletonsComponent } from './game-categories-skeletons/game-categories-skeletons.component';
 
 @Component({
   selector: 'app-home-game-categories',
-  imports: [MatIconModule, CommonModule, RouterModule, MatButtonModule],
+  imports: [
+    MatIconModule,
+    CommonModule,
+    RouterModule,
+    MatButtonModule,
+    GameCategoriesSkeletonsComponent,
+  ],
   templateUrl: './home-game-categories.component.html',
   styleUrl: './home-game-categories.component.scss',
 })
-export class HomeGameCategoriesComponent {
+export class HomeGameCategoriesComponent implements OnInit {
   quizes = [
     {
       image: 'sport-quiz.jpg',
@@ -134,4 +143,9 @@ export class HomeGameCategoriesComponent {
       text: 'Pelaa korttisi oikein, oikealla asenteella.',
     },
   ];
+
+  store = inject(Store);
+  ngOnInit(): void {
+    // this.store.dispatch(gameCategoriesActions.getGameCategories.initiate());
+  }
 }

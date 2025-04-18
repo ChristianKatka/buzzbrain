@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { AuthActions } from '../actions/index';
+import { AuthActions } from '../../actions/index';
 
 export interface AuthUiState {
   isInitialAppLoading: boolean;

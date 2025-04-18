@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { AuthTokensSelectors } from '../store/selectors';
+import { AuthTokensSelectors } from '../../../store/selectors';
 
 @Injectable({
   providedIn: 'root',

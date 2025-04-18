@@ -1,8 +1,8 @@
-import { Duration } from "aws-cdk-lib";
 import * as apigwv2 from "aws-cdk-lib/aws-apigatewayv2";
 import { HttpJwtAuthorizer } from "aws-cdk-lib/aws-apigatewayv2-authorizers";
 import * as integrations from "aws-cdk-lib/aws-apigatewayv2-integrations";
 import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
+import { Duration, aws_lambda as lambda } from "aws-cdk-lib";
 import { Construct } from "constructs";
 
 export const createHttpApiGateWay = (
@@ -10,20 +10,67 @@ export const createHttpApiGateWay = (
   apiFunction: NodejsFunction,
   jwtAuthorizer: HttpJwtAuthorizer
 ) => {
-  new apigwv2.HttpApi(stack, "Api", {
+  const httpApi = new apigwv2.HttpApi(stack, "Api", {
     corsPreflight: {
-      allowOrigins: ["*"],
+      allowOrigins: ["http://localhost:4200"],
+      allowMethods: [apigwv2.CorsHttpMethod.ANY], // Allow all methods
       allowHeaders: ["*"],
-      allowMethods: [apigwv2.CorsHttpMethod.GET, apigwv2.CorsHttpMethod.POST],
       maxAge: Duration.seconds(60),
     },
-    defaultAuthorizer: jwtAuthorizer,
+    // defaultAuthorizer: jwtAuthorizer,
     defaultIntegration: new integrations.HttpLambdaIntegration(
       "DefaultIntegration",
-      apiFunction,
-      {
-        payloadFormatVersion: apigwv2.PayloadFormatVersion.VERSION_1_0, // THIS IS GRUCIAL NOTHING WORKS OTHERWISE
-      }
+      apiFunction
     ),
   });
+
+  // Add explicit routes with authorization
+  httpApi.addRoutes({
+    path: "/{proxy+}",
+    methods: [
+      apigwv2.HttpMethod.GET,
+      apigwv2.HttpMethod.POST,
+      apigwv2.HttpMethod.PUT,
+      apigwv2.HttpMethod.DELETE,
+    ],
+    integration: new integrations.HttpLambdaIntegration(
+      "ProxyIntegration",
+      apiFunction
+    ),
+    // authorizer: jwtAuthorizer, // JWT auth for real requests
+  });
+
+  // Add explicit OPTIONS route WITHOUT authorizer
+  httpApi.addRoutes({
+    path: "/{proxy+}",
+    methods: [apigwv2.HttpMethod.OPTIONS],
+    integration: new integrations.HttpLambdaIntegration(
+      "OptionsIntegration",
+      apiFunction
+    ),
+    // authorizer: undefined, // No auth for preflight
+  });
 };
+
+// WORKING KINDA BUT NOT
+
+// new apigwv2.HttpApi(stack, "Api", {
+//   corsPreflight: {
+//     allowOrigins: ["*"],
+//     allowHeaders: ["*"],
+//     allowMethods: [
+//       apigwv2.CorsHttpMethod.GET,
+//       apigwv2.CorsHttpMethod.POST,
+//       apigwv2.CorsHttpMethod.OPTIONS,
+//     ],
+//     maxAge: Duration.seconds(60),
+//   },
+//   defaultAuthorizer: jwtAuthorizer,
+//   defaultIntegration: new integrations.HttpLambdaIntegration(
+//     "DefaultIntegration",
+//     apiFunction,
+//     {
+//       payloadFormatVersion: apigwv2.PayloadFormatVersion.VERSION_1_0, // THIS IS GRUCIAL NOTHING WORKS OTHERWISE
+//     }
+//   ),
+// });

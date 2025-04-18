@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { AuthCredentials } from '../models/auth-credentials.model';
@@ -7,7 +7,7 @@ import { SignUpCredentials } from '../models/sign-up-credentials.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  http = inject(HttpClient);
 
   login(credentials: AuthCredentials): Observable<any> {
     return this.http.post(
@@ -28,6 +28,4 @@ export class AuthService {
       refreshToken,
     });
   }
-
-  logoutFromAllDevices() {}
 }

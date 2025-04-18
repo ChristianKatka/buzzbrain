@@ -4,8 +4,8 @@ import {
   emptyProps,
   props,
 } from '@ngrx/store';
-import { AuthCredentials } from '../../models/auth-credentials.model';
-import { SignUpCredentials } from '../../models/sign-up-credentials.model';
+import { SignUpCredentials } from '../../app/auth/models/sign-up-credentials.model';
+import { AuthCredentials } from '../../app/auth/models/auth-credentials.model';
 
 export const RefreshTokens = createActionGroup({
   source: '[Auth] Refresh Tokens',

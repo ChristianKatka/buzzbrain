@@ -10,10 +10,10 @@ import {
   tap,
   withLatestFrom,
 } from 'rxjs/operators';
-import { AuthService } from '../../services/auth.service';
-import { AuthActions } from '../actions/index';
-import { AuthTokensSelectors } from '../selectors';
 import { catchCognitoErrorsIfAny } from './utils/catch-cognito-errors-if-any.util';
+import { AuthService } from '../../../app/auth/services/auth.service';
+import { AuthActions } from '../../actions';
+import { AuthTokensSelectors } from '../../selectors';
 
 export const refreshTokensEffect = createEffect(
   () => {

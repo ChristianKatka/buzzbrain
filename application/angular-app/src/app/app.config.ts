@@ -4,11 +4,13 @@ import { provideRouter } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import * as authEffects from '../store/effects/auth/auth.effects';
+import * as gameCategoriesEffects from '../store/effects/game-categories.effects';
+import { metaReducers } from '../store/reducers';
+import { authTokensReducer } from '../store/reducers/auth/auth-tokens.reducer';
+import { authUiReducer } from '../store/reducers/auth/auth-ui.reducer';
+import { gameCategoriesReducer } from '../store/reducers/game-categories.reducer';
 import { routes } from './app.routes';
-import * as authEffects from './auth/store/effects/auth.effects';
-import { metaReducers } from './auth/store/reducers';
-import { authTokensReducer } from './auth/store/reducers/auth-tokens.reducer';
-import { authUiReducer } from './auth/store/reducers/auth-ui.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,12 +20,13 @@ export const appConfig: ApplicationConfig = {
       {
         authTokens: authTokensReducer,
         authUi: authUiReducer,
+        gameCategories: gameCategoriesReducer,
       },
       {
         metaReducers: metaReducers,
       }
     ),
-    provideEffects(authEffects),
+    provideEffects(authEffects, gameCategoriesEffects),
     provideStoreDevtools({
       maxAge: 25,
       autoPause: true,

@@ -9,6 +9,10 @@ export const getGameCategoriesController = async (
   const userId = ctx.state.jwtPayload.sub;
   const body = ctx.request.body;
 
+  // new stuff meaby not need v2 stuff
+  // const method = ctx.request.method; // Already handled by middleware
+  // const path = ctx.request.path;     // Already translated
+
   const gameCategories = await getGameCategoriesService();
 
   ctx.body = gameCategories;

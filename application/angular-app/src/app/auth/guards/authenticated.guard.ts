@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, tap } from 'rxjs';
-import { AuthTokensSelectors } from '../store/selectors';
+import { AuthTokensSelectors } from '../../../store/selectors';
 
 @Injectable({
   providedIn: 'root',

@@ -14,8 +14,8 @@ export const gameCategories = [
     description:
       "Nopeatempoinen musiikkibingo, jossa numerot on korvattu kappaleilla.",
     image: "jukebox-bingo.jpg",
-    logo: "",
-    headerImage: "",
+    logo: "JukeboxBingoLogo.png",
+    headerImage: "jukeboxbingo-header.png",
   },
   {
     categoryId: "common-knowledge",

@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AuthCredentials } from '../../models/auth-credentials.model';
-import { AuthActions } from '../../store/actions';
-import { AuthUiSelectors } from '../../store/selectors';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { AuthUiSelectors } from '../../../../store/selectors';
+import { AuthActions } from '../../../../store/actions';
 
 @Component({
   standalone: true,

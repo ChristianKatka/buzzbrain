@@ -1,4 +1,4 @@
-import { AuthActions } from '../../actions/index';
+import { AuthActions } from '../../../actions/index';
 
 export const catchCognitoErrorsIfAny = (response: any): any => {
   if (response.error && response.error.name === 'UserNotFoundException') {

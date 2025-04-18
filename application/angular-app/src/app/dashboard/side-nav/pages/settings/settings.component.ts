@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { Store } from '@ngrx/store';
-import { AuthActions } from '../../../../auth/store/actions';
+import { AuthActions } from '../../../../../store/actions';
 
 @Component({
   selector: 'app-settings',
