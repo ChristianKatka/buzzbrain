@@ -132,11 +132,15 @@ export const loginOrRefreshTokensSuccessEffect = createEffect(
       tap(() => {
         const currentUrl = router.url;
 
-        const isAuthPage =
-          currentUrl === '/login' || currentUrl === '/register';
+        const isLoginPage = currentUrl === '/login';
 
-        if (isAuthPage) {
-          router.navigate(['/']);
+        const isRegisterPage = currentUrl === '/register';
+
+        if (isLoginPage) {
+          router.navigate(['/dashboard']);
+        }
+        if (isRegisterPage) {
+          router.navigate(['/welcome']);
         }
         // Else: stay on the same page
       })

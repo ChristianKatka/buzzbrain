@@ -5,6 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { GameCategoriesSkeletonsComponent } from './game-categories-skeletons/game-categories-skeletons.component';
+import { gameCategoriesActions } from '../../../../../store/actions';
+import { getGameCategoriesControlData } from '../../../../../store/selectors/game-categories.selectors';
 
 @Component({
   selector: 'app-home-game-categories',
@@ -144,7 +146,10 @@ export class HomeGameCategoriesComponent implements OnInit {
   ];
 
   store = inject(Store);
+
+  controlData = this.store.selectSignal(getGameCategoriesControlData);
+
   ngOnInit(): void {
-    // this.store.dispatch(gameCategoriesActions.getGameCategories.initiate());
+    this.store.dispatch(gameCategoriesActions.getGameCategories.initiate());
   }
 }

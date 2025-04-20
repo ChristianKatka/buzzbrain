@@ -34,7 +34,7 @@ export class UnauthenticatedGuard {
     const userIsLoggedInSoRedirectToHome = !isUnAuthenticated;
 
     if (userIsLoggedInSoRedirectToHome) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/dashboard']);
     }
   }
 }

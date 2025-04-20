@@ -5,6 +5,7 @@ export const getGameCategories = createActionGroup({
   events: {
     Initiate: emptyProps(),
     Success: props<{ gameCategories: any }>(),
+    noFetchNeeded: emptyProps(),
     Error: props<{ error: any }>(),
   },
 });

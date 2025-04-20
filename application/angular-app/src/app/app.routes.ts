@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
-import { AuthenticatedGuard } from './auth/guards/authenticated.guard';
-import { startupGuard } from './auth/guards/startup.guard';
-import { UnauthenticatedGuard } from './auth/guards/unauthenticated.guard';
 
 export const routes: Routes = [
   {
     path: '',
-    canActivate: [startupGuard],
+    // canActivate: [startupGuard],
     children: [
       {
         path: 'dashboard',
-        canActivate: [AuthenticatedGuard],
+        // canActivate: [AuthenticatedGuard],
         loadComponent: () =>
           import('./dashboard/dashboard.component').then(
             (m) => m.DashboardComponent
@@ -18,7 +15,7 @@ export const routes: Routes = [
         children: [
           {
             path: '',
-            canActivate: [AuthenticatedGuard],
+            // canActivate: [AuthenticatedGuard],
             loadComponent: () =>
               import(
                 './dashboard/side-nav/pages/home-game-categories/home-game-categories.component'
@@ -26,7 +23,7 @@ export const routes: Routes = [
           },
           {
             path: 'billing',
-            canActivate: [AuthenticatedGuard],
+            // canActivate: [AuthenticatedGuard],
             loadComponent: () =>
               import(
                 './dashboard/side-nav/pages/billing/billing.component'
@@ -34,7 +31,7 @@ export const routes: Routes = [
           },
           {
             path: 'settings',
-            canActivate: [AuthenticatedGuard],
+            // canActivate: [AuthenticatedGuard],
             loadComponent: () =>
               import(
                 './dashboard/side-nav/pages/settings/settings.component'
@@ -43,16 +40,16 @@ export const routes: Routes = [
         ],
       },
       {
-        path: 'category/jukebox',
-        canActivate: [AuthenticatedGuard],
+        path: 'category/:categoryId',
+        // canActivate: [AuthenticatedGuard],
         loadComponent: () =>
           import('./jukebox-bingo/jukebox-bingo.component').then(
             (m) => m.JukeboxBingoComponent
           ),
       },
       {
-        path: 'category/jukebox/game',
-        canActivate: [AuthenticatedGuard],
+        path: 'category/:categoryId/:gameId',
+        // canActivate: [AuthenticatedGuard],
         loadComponent: () =>
           import('./jukebox-bingo/jb-visa/jb-visa.component').then(
             (m) => m.JBVisaComponent
@@ -68,7 +65,7 @@ export const routes: Routes = [
 
   {
     path: 'login',
-    canActivate: [UnauthenticatedGuard],
+    // canActivate: [UnauthenticatedGuard],
     loadComponent: () =>
       import('./auth/components/login/login.container').then(
         (m) => m.LoginContainerComponent
@@ -76,7 +73,7 @@ export const routes: Routes = [
   },
   {
     path: 'register',
-    canActivate: [UnauthenticatedGuard],
+    // canActivate: [UnauthenticatedGuard],
     loadComponent: () =>
       import('./auth/components/register/register.container').then(
         (m) => m.RegisterContainerComponent
@@ -84,7 +81,7 @@ export const routes: Routes = [
   },
   {
     path: 'welcome',
-    canActivate: [AuthenticatedGuard],
+    // canActivate: [AuthenticatedGuard],
     loadComponent: () =>
       import('../shared/components/welcome/welcome.component').then(
         (m) => m.WelcomeComponent

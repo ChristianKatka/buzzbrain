@@ -4,11 +4,13 @@ import { AuthActions, gameCategoriesActions } from '../actions/index';
 export interface GameCategoriestate {
   gameCategories: any[];
   isLoading: boolean;
+  fetchedTimeStamp: undefined | number; // used to determine if we should fetch data again or not
 }
 
 export const initialState: GameCategoriestate = {
   gameCategories: [],
   isLoading: false,
+  fetchedTimeStamp: undefined,
 };
 
 export const gameCategoriesReducer = createReducer(
@@ -25,10 +27,17 @@ export const gameCategoriesReducer = createReducer(
       return {
         ...state,
         isLoading: false,
+        fetchedTimeStamp: Date.now(),
         gameCategories,
       };
     }
   ),
+  on(gameCategoriesActions.getGameCategories.noFetchNeeded, (state) => {
+    return {
+      ...state,
+      isLoading: false,
+    };
+  }),
 
   on(AuthActions.Logout, () => initialState)
 );

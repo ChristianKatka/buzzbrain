@@ -9,8 +9,8 @@ import * as gameCategoriesEffects from '../store/effects/game-categories.effects
 import { metaReducers } from '../store/reducers';
 import { authTokensReducer } from '../store/reducers/auth/auth-tokens.reducer';
 import { authUiReducer } from '../store/reducers/auth/auth-ui.reducer';
-import { gameCategoriesReducer } from '../store/reducers/game-categories.reducer';
 import { routes } from './app.routes';
+import { gameCategoriesReducer } from '../store/reducers/game-categories.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,7 +20,7 @@ export const appConfig: ApplicationConfig = {
       {
         authTokens: authTokensReducer,
         authUi: authUiReducer,
-        // gameCategories: gameCategoriesReducer,
+        gameCategories: gameCategoriesReducer,
       },
       {
         metaReducers: metaReducers,

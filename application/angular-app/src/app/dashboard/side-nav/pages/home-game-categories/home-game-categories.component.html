@@ -1,24 +1,27 @@
-<!-- <div class="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 min-h-0">
-  @for (quiz of quizes; track $index) {
+@if(controlData().isLoading) {
+<app-game-categories-skeletons></app-game-categories-skeletons>
+} @else {
+<div class="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 min-h-0">
+  @for (gameCategory of controlData().gameCategories; track $index) {
   <div
     class="border border-gray-200/50 rounded-xl p-3 overflow-hidden shadow-md"
   >
     <img
-      [src]="quiz.image"
-      [alt]="quiz.alt"
+      [src]="gameCategory.image"
+      [alt]="'game-category-image'"
       class="w-full h-auto object-contain rounded-xl shadow-md"
     />
     <div class="p-3 space-y-2">
       <p class="font-bold text-lg text-gray-900 truncate">
-        {{ quiz.title }}
+        {{ gameCategory.displayName }}
       </p>
       <div class="min-h-10">
         <p class="text-sm text-gray-600 line-clamp-2">
-          {{ quiz.text }}
+          {{ gameCategory.description }}
         </p>
       </div>
       <button
-        [routerLink]="[quiz.urlRoute]"
+        [routerLink]="[`/category/${gameCategory.categoryId}`]"
         mat-raised-button
         class="w-full mt-2"
       >
@@ -27,8 +30,6 @@
     </div>
   </div>
   }
-</div> -->
+</div>
 
-<!-- Show when loading -->
-
-<app-game-categories-skeletons></app-game-categories-skeletons>
+}
