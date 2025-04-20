@@ -7,7 +7,7 @@ import { GameCategoriestate } from './game-categories.reducer';
 export interface AppState {
   authUi: AuthUiState;
   authTokens: AuthTokensState;
-  gameCategories: GameCategoriestate;
+  // gameCategories: GameCategoriestate;
 }
 
 export function localStorageSyncReducer(reducer: any): any {

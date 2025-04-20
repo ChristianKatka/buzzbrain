@@ -4,7 +4,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { gameCategoriesActions } from '../../../../../store/actions';
 import { GameCategoriesSkeletonsComponent } from './game-categories-skeletons/game-categories-skeletons.component';
 
 @Component({

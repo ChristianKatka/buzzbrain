@@ -11,6 +11,6 @@ import { isInitialAppLoading } from '../store/selectors/auth-ui.selectors';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  // store = inject(Store);
-  // isInitialAppLoading = this.store.selectSignal(isInitialAppLoading);
+  store = inject(Store);
+  isInitialAppLoading = this.store.selectSignal(isInitialAppLoading);
 }

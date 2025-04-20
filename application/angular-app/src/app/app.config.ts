@@ -20,7 +20,7 @@ export const appConfig: ApplicationConfig = {
       {
         authTokens: authTokensReducer,
         authUi: authUiReducer,
-        gameCategories: gameCategoriesReducer,
+        // gameCategories: gameCategoriesReducer,
       },
       {
         metaReducers: metaReducers,

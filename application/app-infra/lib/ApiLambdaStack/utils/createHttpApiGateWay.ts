@@ -10,45 +10,29 @@ export const createHttpApiGateWay = (
   apiFunction: NodejsFunction,
   jwtAuthorizer: HttpJwtAuthorizer
 ) => {
-  const httpApi = new apigwv2.HttpApi(stack, "Api", {
+  // Create the HTTP API
+  const httpApi = new apigwv2.HttpApi(stack, "ApiGatewayHttpApi", {
+    apiName: "Api",
     corsPreflight: {
-      allowOrigins: ["http://localhost:4200"],
-      allowMethods: [apigwv2.CorsHttpMethod.ANY], // Allow all methods
+      allowOrigins: ["*"], // or your domain
+      allowMethods: [apigwv2.CorsHttpMethod.ANY],
       allowHeaders: ["*"],
       maxAge: Duration.seconds(60),
     },
-    // defaultAuthorizer: jwtAuthorizer,
     defaultIntegration: new integrations.HttpLambdaIntegration(
       "DefaultIntegration",
       apiFunction
     ),
   });
 
-  // Add explicit routes with authorization
-  httpApi.addRoutes({
-    path: "/{proxy+}",
-    methods: [
-      apigwv2.HttpMethod.GET,
-      apigwv2.HttpMethod.POST,
-      apigwv2.HttpMethod.PUT,
-      apigwv2.HttpMethod.DELETE,
-    ],
-    integration: new integrations.HttpLambdaIntegration(
-      "ProxyIntegration",
-      apiFunction
-    ),
-    // authorizer: jwtAuthorizer, // JWT auth for real requests
-  });
-
-  // Add explicit OPTIONS route WITHOUT authorizer
+  // Manually define OPTIONS route for CORS preflight (especially needed if Cognito authorizer is used)
   httpApi.addRoutes({
     path: "/{proxy+}",
     methods: [apigwv2.HttpMethod.OPTIONS],
     integration: new integrations.HttpLambdaIntegration(
-      "OptionsIntegration",
+      "PreflightIntegration",
       apiFunction
     ),
-    // authorizer: undefined, // No auth for preflight
   });
 };
 
