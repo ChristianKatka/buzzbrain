@@ -20,3 +20,7 @@ body {
   background: #cbd5e0;
   border-radius: 4px;
 }
+
+.skeleton {
+  @apply bg-shimmer bg-[length:200%_100%] animate-shimmer relative rounded;
+}

@@ -5,12 +5,14 @@ export interface GameCategoriestate {
   gameCategories: any[];
   isLoading: boolean;
   fetchedTimeStamp: undefined | number; // used to determine if we should fetch data again or not
+  selectedGameCategory: undefined | string;
 }
 
 export const initialState: GameCategoriestate = {
   gameCategories: [],
   isLoading: false,
   fetchedTimeStamp: undefined,
+  selectedGameCategory: undefined,
 };
 
 export const gameCategoriesReducer = createReducer(
@@ -36,6 +38,12 @@ export const gameCategoriesReducer = createReducer(
     return {
       ...state,
       isLoading: false,
+    };
+  }),
+  on(gameCategoriesActions.selectGameCategory, (state, { categoryId }) => {
+    return {
+      ...state,
+      selectedGameCategory: categoryId,
     };
   }),
 

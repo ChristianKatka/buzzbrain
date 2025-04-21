@@ -1,4 +1,9 @@
-import { createActionGroup, emptyProps, props } from '@ngrx/store';
+import {
+  createAction,
+  createActionGroup,
+  emptyProps,
+  props,
+} from '@ngrx/store';
 
 export const getGameCategories = createActionGroup({
   source: '[GameCategories] get',
@@ -9,3 +14,8 @@ export const getGameCategories = createActionGroup({
     Error: props<{ error: any }>(),
   },
 });
+
+export const selectGameCategory = createAction(
+  '[Game Categories] Select Game Category',
+  props<{ categoryId: string }>()
+);
