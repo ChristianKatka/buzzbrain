@@ -1,0 +1,30 @@
+<div class="relative w-full h-screen overflow-hidden">
+  <video
+    #backgroundVideo
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    class="absolute inset-0 w-full h-full object-cover"
+  >
+    <source
+      src="/background-videos/blue-particles-dust-abstract-light-motion-titles-cinematic-background-loop.mp4"
+      type="video/mp4"
+    />
+    Your browser does not support the video tag.
+  </video>
+
+  <div
+    class="relative z-10 flex items-center justify-center w-full h-full text-white"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>
+
+<!-- START 
+src="/background-videos/blue-particles-dust-abstract-light-motion-titles-cinematic-background-loop.mp4"
+src="/background-videos/slow-dispersing-moving-abstract-clouds-over-a-black-background.mp4"
+src="/background-videos/stage-spotlight-with-moving-smoke-on-black-background-1.mp4"
+src="/background-videos/stage-spotlight-with-moving-smoke-on-black-background-2.mp4"
+END -->
