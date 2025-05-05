@@ -6,11 +6,13 @@ import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import * as authEffects from '../store/effects/auth/auth.effects';
 import * as gameCategoriesEffects from '../store/effects/game-categories.effects';
+import * as gamesEffects from '../store/effects/games.effects';
 import { metaReducers } from '../store/reducers';
 import { authTokensReducer } from '../store/reducers/auth/auth-tokens.reducer';
 import { authUiReducer } from '../store/reducers/auth/auth-ui.reducer';
-import { routes } from './app.routes';
 import { gameCategoriesReducer } from '../store/reducers/game-categories.reducer';
+import { gamesReducer } from '../store/reducers/games.reducer';
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,12 +23,13 @@ export const appConfig: ApplicationConfig = {
         authTokens: authTokensReducer,
         authUi: authUiReducer,
         gameCategories: gameCategoriesReducer,
+        games: gamesReducer,
       },
       {
         metaReducers: metaReducers,
       }
     ),
-    provideEffects(authEffects, gameCategoriesEffects),
+    provideEffects(authEffects, gameCategoriesEffects, gamesEffects),
     provideStoreDevtools({
       maxAge: 25,
       autoPause: true,

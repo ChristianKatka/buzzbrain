@@ -21,7 +21,7 @@
         </p>
       </div>
       <button
-        [routerLink]="[`/category/${gameCategory.categoryId}`]"
+        (click)="selectGameCategory(gameCategory.categoryId)"
         mat-raised-button
         class="w-full mt-2"
       >
@@ -31,5 +31,4 @@
   </div>
   }
 </div>
-
 }

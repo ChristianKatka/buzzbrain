@@ -25,6 +25,11 @@ export class QuestionsComponent {
     { text: 'lorem owdsadsajeo dkddon?3' },
   ];
 
+  @HostListener('document:fullscreenchange')
+  onFullScreenChange() {
+    this.isFullscreen = !!document.fullscreenElement;
+  }
+
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
     if (event.key === 'ArrowRight') {
@@ -37,17 +42,13 @@ export class QuestionsComponent {
 
   next() {
     if (this.currentIndex < this.questions.length - 1 && !this.isSliding) {
-      this.isSliding = true;
-      this.currentIndex++;
-      setTimeout(() => (this.isSliding = false), this.transitionDuration); // match your transition duration
+      this.slideTo(this.currentIndex + 1);
     }
   }
 
   prev() {
     if (this.currentIndex > 0 && !this.isSliding) {
-      this.isSliding = true;
-      this.currentIndex--;
-      setTimeout(() => (this.isSliding = false), this.transitionDuration);
+      this.slideTo(this.currentIndex - 1);
     }
   }
 
@@ -61,5 +62,19 @@ export class QuestionsComponent {
     }
 
     this.isFullscreen = !this.isFullscreen;
+  }
+
+  isLastQuestionIndex(): boolean {
+    return this.currentIndex === this.questions.length - 1;
+  }
+
+  isFirstQuestionIndex(): boolean {
+    return this.currentIndex === 0;
+  }
+
+  private slideTo(index: number) {
+    this.isSliding = true;
+    this.currentIndex = index;
+    setTimeout(() => (this.isSliding = false), this.transitionDuration);
   }
 }

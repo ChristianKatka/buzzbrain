@@ -1,19 +1,24 @@
-<!-- Centered Question -->
-<h1
-  class="relative z-20 text-white text-7xl font-bold text-center p-8 rounded-md bg-black/30 backdrop-blur-md"
->
-  {{ questions[0].text }}
-</h1>
-
-<!-- Custom icon buttons at bottom center -->
+<!-- Slide Track (moves left/right with transform) -->
 <div
-  class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex items-center justify-between w-40"
+  class="slides-track"
+  [style.width]="questions.length * 100 + 'vw'"
+  [style.transform]="'translateX(-' + currentIndex * 100 + 'vw)'"
+  [style.transitionDuration]="transitionDuration + 'ms'"
 >
-  <!-- Left icon button -->
+  <div class="slide" *ngFor="let q of questions">
+    <div class="p-5 rounded-xl bg-white/10 backdrop-blur-sm">
+      <h1 class="text-white text-7xl font-bold">{{ q.text }}</h1>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation Buttons -->
+<div class="controls">
+  <!-- Previous Button -->
   <div
     class="flex justify-center bg-gray-800 p-3 rounded-md shadow-md cursor-pointer hover:bg-gray-700 transition"
-    [class.opacity-50]="isSliding"
-    [class.pointer-events-none]="isSliding"
+    [class.opacity-50]="isSliding || isFirstQuestionIndex()"
+    [class.pointer-events-none]="isSliding || isFirstQuestionIndex()"
     role="button"
     aria-label="Previous"
     (click)="prev()"
@@ -21,11 +26,11 @@
     <mat-icon class="text-white">arrow_back</mat-icon>
   </div>
 
-  <!-- Right icon button -->
+  <!-- Next Button -->
   <div
     class="flex justify-center bg-gray-800 p-3 rounded-md shadow-md transition hover:bg-gray-700 cursor-pointer"
-    [class.opacity-50]="isSliding"
-    [class.pointer-events-none]="isSliding"
+    [class.opacity-50]="isSliding || isLastQuestionIndex()"
+    [class.pointer-events-none]="isSliding || isLastQuestionIndex()"
     role="button"
     aria-label="Next"
     (click)="next()"
@@ -33,9 +38,9 @@
     <mat-icon class="text-white">arrow_forward</mat-icon>
   </div>
 </div>
-<!-- Fullscreen toggle button -->
+
 <div
-  class="absolute bottom-8 right-8 z-30 flex justify-center bg-gray-800 p-3 rounded-md shadow-md transition hover:bg-gray-700 cursor-pointer"
+  class="absolute bottom-5 right-5 z-30 flex justify-center bg-gray-800 p-3 rounded-md shadow-md transition hover:bg-gray-700 cursor-pointer"
   role="button"
   aria-label="Toggle Fullscreen"
   (click)="toggleFullscreen()"

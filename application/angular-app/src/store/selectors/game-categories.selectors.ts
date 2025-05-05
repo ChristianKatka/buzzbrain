@@ -27,3 +27,10 @@ export const shouldFetchGameCategories = createSelector(
     return diff > maxAge;
   }
 );
+
+export const getSelectedGameCategory = createSelector(
+  selectGameCategoriesState,
+  (state) => {
+    return state.selectedGameCategory;
+  }
+);

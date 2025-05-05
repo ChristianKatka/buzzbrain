@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 @Component({
   standalone: true,
@@ -9,7 +10,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: 'jb-games.component.html',
   styleUrl: 'jb-games.component.scss',
 })
-export class JBGamesComponent {
+export class JBGamesComponent implements OnInit {
   games = [
     { image: '2020.jpg', alt: '2020', name: '2020 hitit' },
     { image: '2010.jpg', alt: '2010', name: '2010 hitit' },
@@ -17,4 +18,8 @@ export class JBGamesComponent {
     { image: '90.jpg', alt: '90', name: '1980 hitit' },
     { image: '80.jpg', alt: '80', name: '1970 hitit' },
   ];
+
+  store = inject(Store);
+
+  ngOnInit(): void {}
 }

@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { GameCategoriesSkeletonsComponent } from './game-categories-skeletons/game-categories-skeletons.component';
 import { gameCategoriesActions } from '../../../../../store/actions';
 import { getGameCategoriesControlData } from '../../../../../store/selectors/game-categories.selectors';
+import { selectGameCategory } from '../../../../../store/actions/game-categories.actions';
 
 @Component({
   selector: 'app-home-game-categories',
@@ -151,5 +152,9 @@ export class HomeGameCategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(gameCategoriesActions.getGameCategories.initiate());
+  }
+
+  selectGameCategory(categoryId: string) {
+    this.store.dispatch(selectGameCategory({ categoryId }));
   }
 }

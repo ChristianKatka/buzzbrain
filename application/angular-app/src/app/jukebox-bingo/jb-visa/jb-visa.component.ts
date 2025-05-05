@@ -32,6 +32,11 @@ export class JBVisaComponent implements OnInit {
     });
   }
 
+  @HostListener('document:fullscreenchange')
+  onFullScreenChange() {
+    this.isFullscreen = !!document.fullscreenElement;
+  }
+
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
     if (event.key === 'ArrowRight') {
@@ -44,17 +49,13 @@ export class JBVisaComponent implements OnInit {
 
   next() {
     if (this.currentIndex < this.questions.length - 1 && !this.isSliding) {
-      this.isSliding = true;
-      this.currentIndex++;
-      setTimeout(() => (this.isSliding = false), this.transitionDuration); // match your transition duration
+      this.slideTo(this.currentIndex + 1);
     }
   }
 
   prev() {
     if (this.currentIndex > 0 && !this.isSliding) {
-      this.isSliding = true;
-      this.currentIndex--;
-      setTimeout(() => (this.isSliding = false), this.transitionDuration);
+      this.slideTo(this.currentIndex - 1);
     }
   }
 
@@ -68,5 +69,11 @@ export class JBVisaComponent implements OnInit {
     }
 
     this.isFullscreen = !this.isFullscreen;
+  }
+
+  private slideTo(index: number) {
+    this.isSliding = true;
+    this.currentIndex = index;
+    setTimeout(() => (this.isSliding = false), this.transitionDuration);
   }
 }
