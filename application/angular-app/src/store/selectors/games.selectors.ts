@@ -12,7 +12,9 @@ export const getGamesControlData = createSelector(
 
     return {
       isLoading: state.isLoading,
-      games: state.gamesByCategory[selectedGameCategory],
+      games: Object.values(
+        state.gamesByCategory[selectedGameCategory.categoryId]
+      ),
     };
   }
 );
@@ -31,5 +33,19 @@ export const shouldFetchGamesForSelectedCategory = createSelector(
     const maxAge = 1000 * 60 * 60; // 1 hour
 
     return diff > maxAge;
+  }
+);
+
+export const getSelectedGame = createSelector(
+  selectGamesState,
+  getSelectedGameCategory,
+  (state, selectedGameCategory) => {
+    if (!selectedGameCategory) return undefined;
+    if (!state.selectedGame) return undefined;
+
+    const selectedGategoryGames: any =
+      state.gamesByCategory[selectedGameCategory.categoryId];
+
+    return selectedGategoryGames[state.selectedGame];
   }
 );

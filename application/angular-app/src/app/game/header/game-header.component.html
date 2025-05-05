@@ -1,0 +1,17 @@
+<div
+  class="header-container relative max-w-[1800px] mx-auto"
+  [ngStyle]="{
+  'background-image': 'url(' + selectedGameCategory().image + ')',
+}"
+>
+  <!-- Black overlay -->
+  <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+
+  <!-- Content on top -->
+  <div class="relative z-20 text-white text-center py-20">
+    <h1 class="text-4xl font-bold">{{ selectedGameCategory().displayName }}</h1>
+    <p class="text-lg mt-4">
+      {{ selectedGameCategory().description }}
+    </p>
+  </div>
+</div>

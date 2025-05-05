@@ -1,0 +1,51 @@
+<!-- Slide Track (moves left/right with transform) -->
+<div
+  class="slides-track"
+  [style.width]="questions.length * 100 + 'vw'"
+  [style.transform]="'translateX(-' + currentIndex * 100 + 'vw)'"
+  [style.transitionDuration]="transitionDuration + 'ms'"
+>
+  <div class="slide" *ngFor="let q of questions">
+    <div class="p-5 rounded-xl bg-white/10 backdrop-blur-sm">
+      <h1 class="text-white text-7xl font-bold">{{ q.text }}</h1>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation Buttons -->
+<div class="controls">
+  <!-- Previous Button -->
+  <div
+    class="flex justify-center bg-gray-800 p-3 rounded-md shadow-md cursor-pointer hover:bg-gray-700 transition"
+    [class.opacity-50]="isSliding || isFirstQuestionIndex()"
+    [class.pointer-events-none]="isSliding || isFirstQuestionIndex()"
+    role="button"
+    aria-label="Previous"
+    (click)="prev()"
+  >
+    <mat-icon class="text-white">arrow_back</mat-icon>
+  </div>
+
+  <!-- Next Button -->
+  <div
+    class="flex justify-center bg-gray-800 p-3 rounded-md shadow-md transition hover:bg-gray-700 cursor-pointer"
+    [class.opacity-50]="isSliding || isLastQuestionIndex()"
+    [class.pointer-events-none]="isSliding || isLastQuestionIndex()"
+    role="button"
+    aria-label="Next"
+    (click)="next()"
+  >
+    <mat-icon class="text-white">arrow_forward</mat-icon>
+  </div>
+</div>
+
+<div
+  class="absolute bottom-5 right-5 z-30 flex justify-center bg-gray-800 p-3 rounded-md shadow-md transition hover:bg-gray-700 cursor-pointer"
+  role="button"
+  aria-label="Toggle Fullscreen"
+  (click)="toggleFullscreen()"
+>
+  <mat-icon class="text-white">
+    {{ isFullscreen ? "fullscreen_exit" : "fullscreen" }}
+  </mat-icon>
+</div>

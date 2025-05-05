@@ -1,5 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { AuthActions, gamesActions } from '../actions/index';
+import { arrayToDictionary } from '../../shared/utils/array-to-dictionary.util';
 
 export interface GamesState {
   gamesByCategory: Record<string, any[]>; // or Record<string, Game[]>
@@ -30,12 +31,14 @@ export const gamesReducer = createReducer(
     const fetchedCategory = games[0].categoryId;
     const fetchedAt = Date.now();
 
+    const records = arrayToDictionary(games, 'gameId');
+
     return {
       ...state,
       isLoading: false,
       gamesByCategory: {
         ...state.gamesByCategory,
-        [fetchedCategory]: games,
+        [fetchedCategory]: records,
       },
       fetchedGameCategories: {
         ...state.fetchedGameCategories,
@@ -47,6 +50,12 @@ export const gamesReducer = createReducer(
     return {
       ...state,
       isLoading: false,
+    };
+  }),
+  on(gamesActions.selectGame, (state, { gameId }) => {
+    return {
+      ...state,
+      selectedGame: gameId,
     };
   }),
 

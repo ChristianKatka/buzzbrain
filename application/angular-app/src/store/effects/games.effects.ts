@@ -1,5 +1,5 @@
 import { inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
@@ -30,17 +30,19 @@ export const getGamesByCategoryEffect = createEffect(
           return of(gamesActions.getGamesByCategory.noFetchNeeded());
         }
 
-        return gamesService.getGamesByCategory(selectedCategory).pipe(
-          map((games) => {
-            return gamesActions.getGamesByCategory.success({
-              games,
-            });
-          }),
-          catchError((error) => {
-            console.error('getGamesByCategoryEffect error:', error);
-            return of(gamesActions.getGamesByCategory.error({ error }));
-          })
-        );
+        return gamesService
+          .getGamesByCategory(selectedCategory.categoryId)
+          .pipe(
+            map((games) => {
+              return gamesActions.getGamesByCategory.success({
+                games,
+              });
+            }),
+            catchError((error) => {
+              console.error('getGamesByCategoryEffect error:', error);
+              return of(gamesActions.getGamesByCategory.error({ error }));
+            })
+          );
       })
     );
   },
@@ -55,7 +57,8 @@ export const selectGameEffect = createEffect(
     return actions$.pipe(
       ofType(gamesActions.selectGame),
       tap(({ gameId }) => {
-        // router.navigate([`/category/${categoryId}`]);
+        const currentUrl = router.url; // e.g., "/category/sport"
+        router.navigate([`${currentUrl}/${gameId}`]);
       })
     );
   },

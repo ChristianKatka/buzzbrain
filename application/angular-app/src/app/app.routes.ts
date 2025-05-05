@@ -43,21 +43,15 @@ export const routes: Routes = [
         path: 'category/:categoryId',
         // canActivate: [AuthenticatedGuard],
         loadComponent: () =>
-          import('./jukebox-bingo/jukebox-bingo.component').then(
-            (m) => m.JukeboxBingoComponent
+          import('./game-category/game-category.component').then(
+            (m) => m.GameCategoryComponent
           ),
       },
       {
         path: 'category/:categoryId/:gameId',
         // canActivate: [AuthenticatedGuard],
-        // loadComponent: () =>
-        //   import('./jukebox-bingo/jb-visa/jb-visa.component').then(
-        //     (m) => m.JBVisaComponent
-        //   ),
         loadComponent: () =>
-          import(
-            './jukebox-bingo/video-bg-parent/video-bg-parent.component'
-          ).then((m) => m.VisaBgParentComponent),
+          import('./game/game.component').then((m) => m.GameComponent),
       },
       {
         path: '',

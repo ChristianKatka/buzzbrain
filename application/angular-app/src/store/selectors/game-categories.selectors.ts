@@ -9,7 +9,7 @@ export const getGameCategoriesControlData = createSelector(
   (state) => {
     return {
       isLoading: state.isLoading,
-      gameCategories: state.gameCategories,
+      gameCategories: Object.values(state.gameCategories),
     };
   }
 );
@@ -31,6 +31,8 @@ export const shouldFetchGameCategories = createSelector(
 export const getSelectedGameCategory = createSelector(
   selectGameCategoriesState,
   (state) => {
-    return state.selectedGameCategory;
+    if (!state.selectedGameCategory) return undefined;
+
+    return state.gameCategories[state.selectedGameCategory];
   }
 );

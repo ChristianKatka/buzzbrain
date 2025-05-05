@@ -1,0 +1,36 @@
+:host {
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides-track {
+  display: flex;
+  height: 100%;
+  transition-property: transform;
+  transition-timing-function: ease;
+}
+
+/* Each slide fills the screen */
+.slide {
+  flex: 0 0 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+/* Bottom button controls */
+.controls {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 10;
+}
