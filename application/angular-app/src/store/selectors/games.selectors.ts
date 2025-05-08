@@ -8,7 +8,9 @@ export const getGamesControlData = createSelector(
   selectGamesState,
   getSelectedGameCategory,
   (state, selectedGameCategory) => {
-    if (!selectedGameCategory) return;
+    if (!selectedGameCategory) return undefined;
+    if (!state.gamesByCategory[selectedGameCategory.categoryId])
+      return undefined;
 
     return {
       isLoading: state.isLoading,

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { getSelectedGameCategory } from '../../../store/selectors/game-categories.selectors';
+import { getSelectedGame } from '../../../store/selectors/games.selectors';
 
 @Component({
   standalone: true,
@@ -13,5 +13,5 @@ import { getSelectedGameCategory } from '../../../store/selectors/game-categorie
 export class GameHeaderComponent {
   store = inject(Store);
 
-  selectedGameCategory = this.store.selectSignal(getSelectedGameCategory);
+  game = this.store.selectSignal(getSelectedGame);
 }

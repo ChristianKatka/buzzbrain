@@ -1,6 +1,10 @@
+@if(gamesControlDate()) {
 <app-gc-navbar></app-gc-navbar>
 <app-gc-header></app-gc-header>
 <app-gc-games></app-gc-games>
 
 <pre>{{ selectedGameCategory() | json }}</pre>
 <pre>{{ gamesControlDate() | json }}</pre>
+} @else {
+<p>No games in this category</p>
+}

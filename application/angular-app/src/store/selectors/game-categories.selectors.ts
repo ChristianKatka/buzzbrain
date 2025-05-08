@@ -7,9 +7,10 @@ export const selectGameCategoriesState = (state: AppState) =>
 export const getGameCategoriesControlData = createSelector(
   selectGameCategoriesState,
   (state) => {
+    const gameCategories: any = Object.values(state.gameCategories);
     return {
       isLoading: state.isLoading,
-      gameCategories: Object.values(state.gameCategories),
+      gameCategories,
     };
   }
 );

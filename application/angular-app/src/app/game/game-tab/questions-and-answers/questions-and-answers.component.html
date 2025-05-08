@@ -1,0 +1,14 @@
+<div class="p-6 bg-gray-50 min-h-screen">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div
+      *ngFor="let qa of questionsAndAnswers"
+      class="flex flex-col justify-between h-full"
+    >
+      <div class="space-y-2">
+        <h2 class="font-semibold">{{ qa.question }}</h2>
+        <p>Vastaus: {{ qa.answer }}</p>
+      </div>
+      <mat-divider class="mt-4"></mat-divider>
+    </div>
+  </div>
+</div>
