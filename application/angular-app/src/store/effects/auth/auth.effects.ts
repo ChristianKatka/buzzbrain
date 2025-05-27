@@ -15,6 +15,42 @@ import { AuthService } from '../../../app/auth/services/auth.service';
 import { AuthActions } from '../../actions';
 import { AuthTokensSelectors } from '../../selectors';
 
+export const AuthInitEffect = createEffect(
+  () => {
+    const actions$ = inject(Actions);
+    const authService = inject(AuthService);
+    const store = inject(Store);
+
+    return actions$.pipe(
+      ofType(AuthActions.AuthInit),
+      withLatestFrom(store.select(AuthTokensSelectors.getRefreshToken)),
+      withLatestFrom(store.select(AuthTokensSelectors.isAuthenticated)),
+      switchMap(([[_, refreshToken], isAuthenticated]) => {
+        if (isAuthenticated) {
+          return of(AuthActions.AuthInitAlreadyAuthenticated());
+        }
+
+        if (!refreshToken) {
+          // When there is no refresh token, user is not authenticated so logout
+          return of(AuthActions.Logout());
+        }
+        return authService.refreshTokens(refreshToken).pipe(
+          map((response) => {
+            if (response?.error) {
+              return AuthActions.RefreshTokens.error({
+                error: response.errorMessage,
+              });
+            }
+            return AuthActions.RefreshTokens.success({ response });
+          }),
+          catchError((error) => of(AuthActions.RefreshTokens.error({ error })))
+        );
+      })
+    );
+  },
+  { functional: true }
+);
+
 export const refreshTokensEffect = createEffect(
   () => {
     const actions$ = inject(Actions);

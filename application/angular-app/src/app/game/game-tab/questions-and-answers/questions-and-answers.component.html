@@ -1,12 +1,46 @@
-<div class="p-6 bg-gray-50 min-h-screen">
+<div class="flex items-center w-full justify-center my-10 mb-10">
+  <h1>Kysymykset ja vastaukset</h1>
+</div>
+
+@if(isAnswersShowing()) {
+<button
+  (click)="hideAnsers()"
+  class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-200"
+>
+  Piilota vastaukset
+  <mat-icon>visibility</mat-icon>
+</button>
+}@else {
+<button
+  (click)="showAnsers()"
+  class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-200"
+>
+  Näytä vastaukset
+  <mat-icon>visibility_off</mat-icon>
+</button>
+}
+
+<div class="p-6 min-h-screen">
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
     <div
-      *ngFor="let qa of questionsAndAnswers"
+      *ngFor="let question of game().questions"
       class="flex flex-col justify-between h-full"
     >
-      <div class="space-y-2">
-        <h2 class="font-semibold">{{ qa.question }}</h2>
-        <p>Vastaus: {{ qa.answer }}</p>
+      <div class="space-y-2 mb-5">
+        <h2 class="font-semibold mb-3">{{ question.text }}</h2>
+        <span class="pb-4">
+          Vastaus:
+          <span
+            class="font-semibold relative inline-block"
+            [class.blur-sm]="!isAnswersShowing()"
+          >
+            {{ question.answer }}
+            <span
+              *ngIf="!isAnswersShowing()"
+              class="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-sm pointer-events-none"
+            ></span>
+          </span>
+        </span>
       </div>
       <mat-divider class="mt-4"></mat-divider>
     </div>

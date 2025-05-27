@@ -1,12 +1,18 @@
-<mat-tab-group dynamicHeight>
-  <mat-tab label="Kysymykset ja vastaukset">
-    <app-questions-and-answers></app-questions-and-answers>
-  </mat-tab>
-  <mat-tab label="Pelin asetukset">
-    <h1>Pelin asetukset</h1>
-  </mat-tab>
-  <mat-tab label="Väli mainos"> <h1>Pelin väli mainos / tarjous</h1> </mat-tab>
-  <mat-tab label="Esikatselu">
-    <h1>Minified version of the game</h1>
-  </mat-tab>
-</mat-tab-group>
+<div
+  class="flex flex-col sm:flex-row justify-between items-center gap-3 max-w-[1800px] mx-auto"
+>
+  <mat-tab-group dynamicHeight class="w-full h-full">
+    <mat-tab label="Kysymykset ja vastaukset">
+      <app-questions-and-answers></app-questions-and-answers>
+    </mat-tab>
+    <mat-tab label="Pelin asetukset">
+      <app-game-settings></app-game-settings>
+    </mat-tab>
+    <mat-tab label="Väli mainos">
+      <app-game-commercial></app-game-commercial>
+    </mat-tab>
+    <mat-tab label="Esikatselu">
+      <app-game-preview></app-game-preview>
+    </mat-tab>
+  </mat-tab-group>
+</div>

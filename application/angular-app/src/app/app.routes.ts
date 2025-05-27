@@ -1,13 +1,16 @@
 import { Routes } from '@angular/router';
+import { startupGuard } from './auth/guards/startup.guard';
+import { AuthenticatedGuard } from './auth/guards/authenticated.guard';
+import { UnauthenticatedGuard } from './auth/guards/unauthenticated.guard';
 
 export const routes: Routes = [
   {
     path: '',
-    // canActivate: [startupGuard],
+    canActivate: [startupGuard],
     children: [
       {
         path: 'dashboard',
-        // canActivate: [AuthenticatedGuard],
+        canActivate: [AuthenticatedGuard],
         loadComponent: () =>
           import('./dashboard/dashboard.component').then(
             (m) => m.DashboardComponent
@@ -15,7 +18,7 @@ export const routes: Routes = [
         children: [
           {
             path: '',
-            // canActivate: [AuthenticatedGuard],
+            canActivate: [AuthenticatedGuard],
             loadComponent: () =>
               import(
                 './dashboard/side-nav/pages/home-game-categories/home-game-categories.component'
@@ -23,7 +26,7 @@ export const routes: Routes = [
           },
           {
             path: 'billing',
-            // canActivate: [AuthenticatedGuard],
+            canActivate: [AuthenticatedGuard],
             loadComponent: () =>
               import(
                 './dashboard/side-nav/pages/billing/billing.component'
@@ -31,7 +34,7 @@ export const routes: Routes = [
           },
           {
             path: 'settings',
-            // canActivate: [AuthenticatedGuard],
+            canActivate: [AuthenticatedGuard],
             loadComponent: () =>
               import(
                 './dashboard/side-nav/pages/settings/settings.component'
@@ -40,8 +43,15 @@ export const routes: Routes = [
         ],
       },
       {
+        path: 'category/:categoryId/print',
+        loadComponent: () =>
+          import('./game-category/print-game/print-game.component').then(
+            (m) => m.PrintGameComponent
+          ),
+      },
+      {
         path: 'category/:categoryId',
-        // canActivate: [AuthenticatedGuard],
+        canActivate: [AuthenticatedGuard],
         loadComponent: () =>
           import('./game-category/game-category.component').then(
             (m) => m.GameCategoryComponent
@@ -49,9 +59,23 @@ export const routes: Routes = [
       },
       {
         path: 'category/:categoryId/:gameId',
-        // canActivate: [AuthenticatedGuard],
+        canActivate: [AuthenticatedGuard],
         loadComponent: () =>
           import('./game/game.component').then((m) => m.GameComponent),
+      },
+      {
+        path: 'category/:categoryId/:gameId/game',
+        canActivate: [AuthenticatedGuard],
+        loadComponent: () =>
+          import('./game/visa/visa.component').then((m) => m.VisaComponent),
+      },
+      {
+        path: 'category/:categoryId/:gameId/video-game',
+        canActivate: [AuthenticatedGuard],
+        loadComponent: () =>
+          import('./game/video-bg-visa/video-bg-visa.component').then(
+            (m) => m.VideBGVisaComponent
+          ),
       },
       {
         path: '',
@@ -63,7 +87,7 @@ export const routes: Routes = [
 
   {
     path: 'login',
-    // canActivate: [UnauthenticatedGuard],
+    canActivate: [UnauthenticatedGuard],
     loadComponent: () =>
       import('./auth/components/login/login.container').then(
         (m) => m.LoginContainerComponent
@@ -71,7 +95,7 @@ export const routes: Routes = [
   },
   {
     path: 'register',
-    // canActivate: [UnauthenticatedGuard],
+    canActivate: [UnauthenticatedGuard],
     loadComponent: () =>
       import('./auth/components/register/register.container').then(
         (m) => m.RegisterContainerComponent
@@ -79,7 +103,7 @@ export const routes: Routes = [
   },
   {
     path: 'welcome',
-    // canActivate: [AuthenticatedGuard],
+    canActivate: [AuthenticatedGuard],
     loadComponent: () =>
       import('../shared/components/welcome/welcome.component').then(
         (m) => m.WelcomeComponent

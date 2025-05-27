@@ -3,14 +3,14 @@
   <div
     class="flex transition-transform ease-in-out h-full will-change-transform"
     [ngStyle]="{ 'transition-duration': transitionDuration + 'ms' }"
-    [style.width.%]="questions.length * 100"
+    [style.width.%]="selectedGame().questions.length * 100"
     [style.transform]="'translateX(-' + currentIndex * 100 + 'vw)'"
   >
-    @for (question of questions; track $index) {
+    @for (question of selectedGame().questions; track $index) {
     <div
       class="relative w-screen h-screen shrink-0 grow-0 flex items-center justify-center px-4 bg-cover bg-center"
       [ngStyle]="{
-        'background-image': 'url(' + question.imageUrl + ')',
+        'background-image': 'url(' + question.image + ')',
         'background-size': 'cover',
         'background-position': 'center',
         'background-repeat': 'no-repeat'
@@ -36,8 +36,8 @@
     <!-- Left icon button -->
     <div
       class="flex justify-center bg-gray-800 p-3 rounded-md shadow-md cursor-pointer hover:bg-gray-700 transition"
-      [class.opacity-50]="isSliding"
-      [class.pointer-events-none]="isSliding"
+      [class.opacity-50]="isSliding || isFirstQuestionIndex()"
+      [class.pointer-events-none]="isSliding || isFirstQuestionIndex()"
       role="button"
       aria-label="Previous"
       (click)="prev()"
@@ -48,8 +48,8 @@
     <!-- Right icon button -->
     <div
       class="flex justify-center bg-gray-800 p-3 rounded-md shadow-md transition hover:bg-gray-700 cursor-pointer"
-      [class.opacity-50]="isSliding"
-      [class.pointer-events-none]="isSliding"
+      [class.opacity-50]="isSliding || isLastQuestionIndex()"
+      [class.pointer-events-none]="isSliding || isLastQuestionIndex()"
       role="button"
       aria-label="Next"
       (click)="next()"

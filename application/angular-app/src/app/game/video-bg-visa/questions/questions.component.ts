@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject, OnChanges } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { getSelectedGame } from '../../../../store/selectors/games.selectors';
+import { Store } from '@ngrx/store';
 
 @Component({
   standalone: true,
@@ -10,20 +12,25 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: 'questions.component.html',
   styleUrl: 'questions.component.scss',
 })
-export class VideoBGVisaQuestionsComponent {
+export class VideoBGVisaQuestionsComponent implements OnChanges {
+  store = inject(Store);
+
+  selectedGame = this.store.selectSignal(getSelectedGame);
+
   currentIndex = 0;
   isSliding = false;
   isFullscreen = false;
 
   transitionDuration = 1000;
 
-  questions = [
-    { text: 'How many people live in Finland?' },
-    { text: 'What is the capital of Sweden?' },
-    { text: 'lorem owjeo ddwdkon1?' },
-    { text: 'lorem asdasowjeo dqwddkon?2' },
-    { text: 'lorem owdsadsajeo dkddon?3' },
-  ];
+  ngOnChanges() {
+    if (this.selectedGame().questions) {
+      this.selectedGame().questions.forEach((q: any) => {
+        const img = new Image();
+        img.src = q.image;
+      });
+    }
+  }
 
   @HostListener('document:fullscreenchange')
   onFullScreenChange() {
@@ -41,7 +48,10 @@ export class VideoBGVisaQuestionsComponent {
   }
 
   next() {
-    if (this.currentIndex < this.questions.length - 1 && !this.isSliding) {
+    if (
+      this.currentIndex < this.selectedGame().questions.length - 1 &&
+      !this.isSliding
+    ) {
       this.slideTo(this.currentIndex + 1);
     }
   }
@@ -65,7 +75,7 @@ export class VideoBGVisaQuestionsComponent {
   }
 
   isLastQuestionIndex(): boolean {
-    return this.currentIndex === this.questions.length - 1;
+    return this.currentIndex === this.selectedGame().questions.length - 1;
   }
 
   isFirstQuestionIndex(): boolean {

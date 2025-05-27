@@ -1,13 +1,13 @@
 <!-- Slide Track (moves left/right with transform) -->
 <div
   class="slides-track"
-  [style.width]="questions.length * 100 + 'vw'"
+  [style.width]="selectedGame().questions.length * 100 + 'vw'"
   [style.transform]="'translateX(-' + currentIndex * 100 + 'vw)'"
   [style.transitionDuration]="transitionDuration + 'ms'"
 >
-  <div class="slide" *ngFor="let q of questions">
-    <div class="p-5 rounded-xl bg-white/10 backdrop-blur-sm">
-      <h1 class="text-white text-7xl font-bold">{{ q.text }}</h1>
+  <div class="slide" *ngFor="let q of selectedGame().questions">
+    <div class="p-5 mx-6 rounded-xl bg-white/10 backdrop-blur-sm">
+      <h1 class="text-white text-7xl font-bold text-center">{{ q.text }}</h1>
     </div>
   </div>
 </div>

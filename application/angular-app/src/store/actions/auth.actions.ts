@@ -7,6 +7,13 @@ import {
 import { SignUpCredentials } from '../../app/auth/models/sign-up-credentials.model';
 import { AuthCredentials } from '../../app/auth/models/auth-credentials.model';
 
+export const AuthInit = createAction(
+  '[Auth] auth initiate, initial auth check flow'
+);
+export const AuthInitAlreadyAuthenticated = createAction(
+  '[Auth] auth initiate, already authenticated'
+);
+
 export const RefreshTokens = createActionGroup({
   source: '[Auth] Refresh Tokens',
   events: {

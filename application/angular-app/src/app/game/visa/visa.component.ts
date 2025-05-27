@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, inject, OnChanges } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { Store } from '@ngrx/store';
+import { getSelectedGame } from '../../../store/selectors/games.selectors';
 
 @Component({
   standalone: true,
@@ -10,26 +12,24 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: 'visa.component.html',
   styleUrl: 'visa.component.scss',
 })
-export class VisaComponent implements OnInit {
+export class VisaComponent implements OnChanges {
+  store = inject(Store);
+
+  selectedGame = this.store.selectSignal(getSelectedGame);
+
   currentIndex = 0;
   isSliding = false;
   isFullscreen = false;
 
   transitionDuration = 1000;
 
-  questions = [
-    { imageUrl: '/games/bg-1.webp', text: 'How many people live in Finland?' },
-    { imageUrl: '/games/bg-2.webp', text: 'What is the capital of Sweden?' },
-    { imageUrl: '/games/dice-game.webp', text: 'lorem owjeo ddwdkon?' },
-    { imageUrl: '/games/popcorn.webp', text: 'lorem asdasowjeo dqwddkon?' },
-    { imageUrl: '/games/retro-mic.webp', text: 'lorem owdsadsajeo dkddon?' },
-  ];
-
-  ngOnInit() {
-    this.questions.forEach((q) => {
-      const img = new Image();
-      img.src = q.imageUrl;
-    });
+  ngOnChanges() {
+    if (this.selectedGame().questions) {
+      this.selectedGame().questions.forEach((q: any) => {
+        const img = new Image();
+        img.src = q.image;
+      });
+    }
   }
 
   @HostListener('document:fullscreenchange')
@@ -48,7 +48,10 @@ export class VisaComponent implements OnInit {
   }
 
   next() {
-    if (this.currentIndex < this.questions.length - 1 && !this.isSliding) {
+    if (
+      this.currentIndex < this.selectedGame().questions.length - 1 &&
+      !this.isSliding
+    ) {
       this.slideTo(this.currentIndex + 1);
     }
   }
@@ -69,6 +72,14 @@ export class VisaComponent implements OnInit {
     }
 
     this.isFullscreen = !this.isFullscreen;
+  }
+
+  isLastQuestionIndex(): boolean {
+    return this.currentIndex === this.selectedGame().questions.length - 1;
+  }
+
+  isFirstQuestionIndex(): boolean {
+    return this.currentIndex === 0;
   }
 
   private slideTo(index: number) {

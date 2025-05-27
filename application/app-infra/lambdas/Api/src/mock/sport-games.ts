@@ -1,0 +1,173 @@
+export const games = [
+  {
+    gameId: "light-questions",
+    categoryId: "sport",
+    title: "Urheilutietovisailu: Kevyt kysymyspaketti",
+    description:
+      "Täydellisiä kysymyksiä rentoon pubi visailuun, sopii iltamyöhälle kuin myös iltapäivälle",
+    image: "sport-light-questions.jpg",
+    pngImage: "sport-light-questions.png",
+    questions: [
+      {
+        image: "/games/bg-1.webp",
+        text: "1. Kuinka monta pelaajaa on jalkapallojoukkueessa kentällä samaan aikaan?",
+        answer: "1",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "2. Mikä maa tunnetaan jääkiekon suurvaltana ja on voittanut useita maailmanmestaruuksia?",
+        answer: "Kanada",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "3. Kuinka monta rengasta on olympialaisten tunnuksessa?",
+        answer: "5",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "4.Missä urheilulajissa voi saada hole-in-one?",
+        answer: "Golf",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "5. Kuka suomalainen on voittanut useita F1-maailmanmestaruuksia?",
+        answer: "Mika Häkkinen",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "6. Mikä on Suomen kansallisurheilulaji?",
+        answer: "Pesäpallo",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "7. Mikä on jalkapallon suurin kansainvälinen turnaus?",
+        answer: "Fifa World Cup",
+      },
+    ],
+  },
+
+  // light-questions-2
+  {
+    gameId: "light-questions-2",
+    categoryId: "sport",
+    title: "Urheilutietovisailu2: Kevyt kysymyspaketti 2",
+    description:
+      "Täydellisiä kysymyksiä rentoon pubi visailuun, sopii iltamyöhälle kuin myös iltapäivälle",
+    image: "sport-light-questions.jpg",
+    pngImage: "sport-light-questions.png",
+    questions: [
+      {
+        image: "/games/bg-1.webp",
+        text: "1. Kuka on voittanut eniten Formula 1 -maailmanmestaruuksia?",
+        answer: "Lewis Hamilton",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "2. Minkä niminen legendaarinen nyrkkeilijä tunnettiin aiemmin nimellä Cassius Clay?",
+        answer: "Muhammad Ali",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "3. Missä kaupungissa järjestettiin ensimmäiset modernit olympialaiset vuonna 1896?",
+        answer: "Ateena",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "4. Mikä maa voitti jalkapallon MM-kisat vuonna 2014?",
+        answer: "Saksa",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "5. Kuinka monta reikää on täysimittaisessa golfkentässä?",
+        answer: "18",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "6. Mikä suomalainen rallikuski on voittanut neljä maailmanmestaruutta peräkkäin 1996–1999?",
+        answer: "Tommi Mäkinen",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "7. Missä maassa järjestettiin vuoden 2002 jalkapallon MM-kisat yhdessä Etelä-Korean kanssa?",
+        answer: "Japani",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "8. Mikä on pesäpallossa lyönnin jälkeen kentän ensimmäinen etenemispiste?",
+        answer: "Ykkösbase",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "9. Kuka suomalainen hiihtäjä voitti viisi kultamitalia Lahden MM-kisoissa 2001, mutta hylättiin dopingin vuoksi?",
+        answer: "Jari Isometsä",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "10. Minkä lajin tunnettuja kilpailuja ovat esimerkiksi 'Ironman' ja 'Kona World Championship'?",
+        answer: "Triathlon",
+      },
+    ],
+  },
+
+  // MOTOR SPORTS
+  {
+    gameId: "motor-sport-questions",
+    categoryId: "sport",
+    title: "Moottori-urheilu: kysymyspaketti",
+    description: "Kysymyksiä moottori urheilusta",
+    image: "sport-light-questions.jpg",
+    pngImage: "sport-light-questions.png",
+    questions: [
+      {
+        image: "/games/bg-1.webp",
+        text: "1. Mikä talli on voittanut eniten valmistajien maailmanmestaruuksia Formula 1:ssä?",
+        answer: "Ferrari",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "2. Kuka voitti MotoGP:n maailmanmestaruuden kuusi kertaa peräkkäin vuosina 2001–2005?",
+        answer: "Valentino Rossi",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "3. Mikä ranskalainen kaupunki toimii 24 tunnin Le Mans -kilpailun tapahtumapaikkana?",
+        answer: "Le Mans",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "4. Kuka suomalainen kuljettaja on voittanut sekä F1-maailmanmestaruuden että Monacon GP:n?",
+        answer: "Kimi Räikkönen",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "5. Minkä autonvalmistajan tehdastalli käyttää lyhennettä WRT kilpaillessaan kestävyysajoissa?",
+        answer: "Audi",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "6. Mikä on pisin rata F1-kalenterissa vuonna 2024?",
+        answer: "Spa-Francorchamps",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "7. Montako kuljettajaa lähtee lähtöviivalle MotoGP-kilpailussa normaalisti?",
+        answer: "22",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "8. Mikä kaupunki isännöi ensimmäistä Formula E -katukilpailua vuonna 2014?",
+        answer: "Peking",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "9. Kuka suomalainen rallilegenda tunnetaan lempinimellä 'The Flying Finn' ja voitti maailmanmestaruuden vuonna 1981?",
+        answer: "Ari Vatanen",
+      },
+      {
+        image: "/games/bg-1.webp",
+        text: "10. Mikä kansainvälinen moottoriurheiluliitto tunnetaan lyhenteellä FIA?",
+        answer: "Fédération Internationale de l'Automobile",
+      },
+    ],
+  },
+];
