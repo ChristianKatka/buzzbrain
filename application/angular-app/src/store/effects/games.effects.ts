@@ -11,7 +11,7 @@ import {
   withLatestFrom,
 } from 'rxjs/operators';
 import { GamesService } from '../../app/services/games.service';
-import { gamesActions } from '../actions';
+import { AuthActions, gamesActions } from '../actions';
 import { getSelectedGameCategory } from '../selectors/game-categories.selectors';
 import { shouldFetchGamesForSelectedCategory } from '../selectors/games.selectors';
 
@@ -40,6 +40,9 @@ export const getGamesByCategoryEffect = createEffect(
             }),
             catchError((error) => {
               console.error('getGamesByCategoryEffect error:', error);
+              if (error.message === 'Unauthorized') {
+                return of(AuthActions.RefreshTokens.initiate());
+              }
               return of(gamesActions.getGamesByCategory.error({ error }));
             })
           );
