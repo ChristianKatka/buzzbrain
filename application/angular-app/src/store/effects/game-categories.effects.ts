@@ -30,14 +30,15 @@ export const getGameCategoriesEffect = createEffect(
 
         return gameCategoriesService.getGameCategories().pipe(
           map((gameCategories) => {
+            if (gameCategories?.error.message === 'Unauthorized') {
+              return AuthActions.RefreshTokens.initiate();
+            }
+
             return gameCategoriesActions.getGameCategories.success({
               gameCategories,
             });
           }),
           catchError((error) => {
-            if (error.message === 'Unauthorized') {
-              return of(AuthActions.RefreshTokens.initiate());
-            }
             console.error('getGameCategories error:', error);
             return of(gameCategoriesActions.getGameCategories.error({ error }));
           })
