@@ -49,14 +49,14 @@ export const authUiReducer = createReducer(
   ),
 
   // Initial splash screen loader
-  // so if user cant be on login screen and boom home because refresh tokens success
-  on(AuthActions.RefreshTokens.initiate, (state) => {
+  on(AuthActions.AuthInit, AuthActions.RefreshTokens.initiate, (state) => {
     return {
       ...state,
       isInitialAppLoading: true,
     };
   }),
   on(
+    AuthActions.AuthInitAlreadyAuthenticated,
     AuthActions.RefreshTokens.error,
     AuthActions.RefreshTokens.success,
     AuthActions.Logout,

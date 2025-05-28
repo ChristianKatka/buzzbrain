@@ -1,1 +1,5 @@
+@if(isInitialAppLoading()) {
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}@else {
 <router-outlet></router-outlet>
+}

@@ -3,20 +3,20 @@ export const projectName = "buzzbrain";
 
 export const getCognitoUserPoolId = (envName: string) => {
   if (envName === "production") {
-    return "";
+    return "eu-north-1_rCo10jtvy";
   }
   if (envName === "staging") {
-    return "eu-north-1_SdFHvXFCk";
+    return "eu-north-1_PVPJEgvyk";
   }
   return "";
 };
 
 export const getCognitoClientId = (envName: string) => {
   if (envName === "production") {
-    return "";
+    return "7ji2h94r9s3arqfbfemjdq6bhd";
   }
   if (envName === "staging") {
-    return "4m3ajj7778c2clcvnnc3nom8qn";
+    return "5ir5mis4018ie39cs4kit0sfje";
   }
   return "";
 };

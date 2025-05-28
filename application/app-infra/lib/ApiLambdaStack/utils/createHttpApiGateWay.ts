@@ -10,51 +10,63 @@ export const createHttpApiGateWay = (
   apiFunction: NodejsFunction,
   jwtAuthorizer: HttpJwtAuthorizer
 ) => {
-  // Create the HTTP API
   const httpApi = new apigwv2.HttpApi(stack, "ApiGatewayHttpApi", {
     apiName: "Api",
     corsPreflight: {
-      allowOrigins: ["*"], // or your domain
+      allowOrigins: ["*"],
       allowMethods: [apigwv2.CorsHttpMethod.ANY],
       allowHeaders: ["*"],
       maxAge: Duration.seconds(60),
     },
-    defaultIntegration: new integrations.HttpLambdaIntegration(
-      "DefaultIntegration",
-      apiFunction
-    ),
   });
 
-  // Manually define OPTIONS route for CORS preflight (especially needed if Cognito authorizer is used)
+  const integration = new integrations.HttpLambdaIntegration(
+    "Integration",
+    apiFunction
+  );
+
+  // Routes with JWT auth
   httpApi.addRoutes({
-    path: "/{proxy+}",
-    methods: [apigwv2.HttpMethod.OPTIONS],
-    integration: new integrations.HttpLambdaIntegration(
-      "PreflightIntegration",
-      apiFunction
-    ),
+    path: "/game-categories",
+    methods: [apigwv2.HttpMethod.GET],
+    integration,
+    authorizer: jwtAuthorizer,
   });
+
+  httpApi.addRoutes({
+    path: "/game-category",
+    methods: [apigwv2.HttpMethod.POST],
+    integration,
+    authorizer: jwtAuthorizer,
+  });
+
+  httpApi.addRoutes({
+    path: "/games/{categoryId}",
+    methods: [apigwv2.HttpMethod.GET],
+    integration,
+    authorizer: jwtAuthorizer,
+  });
+
+  httpApi.addRoutes({
+    path: "/game",
+    methods: [apigwv2.HttpMethod.POST],
+    integration,
+    authorizer: jwtAuthorizer,
+  });
+
+  // Explicit OPTIONS routes without auth for CORS
+  // other wise preflight options cors error.
+  // this is needed for cognito authorizer integration
+  const corsOnly = (path: string) => {
+    httpApi.addRoutes({
+      path,
+      methods: [apigwv2.HttpMethod.OPTIONS],
+      integration,
+    });
+  };
+
+  corsOnly("/game-categories");
+  corsOnly("/game-category");
+  corsOnly("/games/{categoryId}");
+  corsOnly("/game");
 };
-
-// WORKING KINDA BUT NOT
-
-// new apigwv2.HttpApi(stack, "Api", {
-//   corsPreflight: {
-//     allowOrigins: ["*"],
-//     allowHeaders: ["*"],
-//     allowMethods: [
-//       apigwv2.CorsHttpMethod.GET,
-//       apigwv2.CorsHttpMethod.POST,
-//       apigwv2.CorsHttpMethod.OPTIONS,
-//     ],
-//     maxAge: Duration.seconds(60),
-//   },
-//   defaultAuthorizer: jwtAuthorizer,
-//   defaultIntegration: new integrations.HttpLambdaIntegration(
-//     "DefaultIntegration",
-//     apiFunction,
-//     {
-//       payloadFormatVersion: apigwv2.PayloadFormatVersion.VERSION_1_0, // THIS IS GRUCIAL NOTHING WORKS OTHERWISE
-//     }
-//   ),
-// });

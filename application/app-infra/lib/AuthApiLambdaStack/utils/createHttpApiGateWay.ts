@@ -17,25 +17,7 @@ export const createHttpApiGateWay = (
     },
     defaultIntegration: new integrations.HttpLambdaIntegration(
       "DefaultIntegration",
-      authApiLambdaFunction,
-      {
-        payloadFormatVersion: apigwv2.PayloadFormatVersion.VERSION_1_0, // THIS IS GRUCIAL NOTHING WORKS OTHERWISE
-        // v1.0 (works)
-        // {
-        //   "path": "/auth/login",
-        //   "httpMethod": "POST"
-        // }
-
-        // // v2.0 (broke your routes)
-        // {
-        //   "requestContext": {
-        //     "http": {
-        //       "path": "/auth/login",
-        //       "method": "POST"
-        //     }
-        //   }
-        // }
-      }
+      authApiLambdaFunction
     ),
   });
 };

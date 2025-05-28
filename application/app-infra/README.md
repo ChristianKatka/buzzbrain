@@ -16,7 +16,7 @@ cdk deploy --all -c env=production
    "Sid": "AllowCloudFrontOAI",
    "Effect": "Allow",
    "Principal": {
-   "CanonicalUser": "8f9f89example7d8fb104a56c5f3exampled5571cf5a4d94a3989example"
+   "CanonicalUser": "5393d9466f1d98e6ae3d9ff8d7f657f1dfa4bba1b765d343fd7bde8f602e1b80c2131a27e992376d323f2fc93e5c6e6a"
    },
    "Action": "s3:GetObject",
    "Resource": "arn:aws:s3:::buzzbrain-staging---app/\*"

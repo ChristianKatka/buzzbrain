@@ -4,9 +4,7 @@ import { createGameController } from "../controllers/createGameController";
 import { getGameCategoriesController } from "../controllers/getGameCategoriesController";
 import { getGamesController } from "../controllers/getGamesController";
 
-export const router = new Router({
-  // prefix: "",
-});
+export const router = new Router();
 
 router.get("/game-categories", getGameCategoriesController);
 router.post("/game-category", createGameCategoryController);

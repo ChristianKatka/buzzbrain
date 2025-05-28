@@ -1,17 +1,10 @@
 {
   "name": "api-lambda",
   "version": "0.0.1",
-  "config": {
-    "region": "eu-north-1",
-    "s3APIlambdaBucket": "buzzbrain-staging---api"
-  },
   "scripts": {
     "start": "nodemon ./src/dev.ts",
     "prebuild": "rm -rf build && rm -rf dist && mkdir build && mkdir dist",
-    "build": "tsc -p tsconfig.json && cp package.json build && cd build && npm install --production",
-    "delete-objects-in-s3": "aws s3 rm s3://$npm_package_config_s3APIlambdaBucket --recursive",
-    "copytos3": "aws s3 cp dist s3://$npm_package_config_s3APIlambdaBucket --recursive",
-    "build-package-deploy": "npm run build && npm run delete-objects-in-s3 && npm run copytos3"
+    "build": "tsc -p tsconfig.json && cp package.json build && cd build && npm install --production"
   },
   "private": true,
   "dependencies": {
@@ -20,8 +13,6 @@
     "@aws-sdk/lib-dynamodb": "^3.775.0",
     "@codegenie/serverless-express": "^4.16.0",
     "@koa/cors": "^4.0.0",
-    "@vendia/serverless-express": "^4.12.6",
-    "aws-serverless-express": "^3.4.0",
     "jws": "^4.0.0",
     "koa": "^2.14.2",
     "koa-bodyparser": "^4.4.1",

@@ -27,7 +27,9 @@ export const shouldFetchGamesForSelectedCategory = createSelector(
   (state, selectedGameCategory) => {
     if (!selectedGameCategory) return false;
 
-    const lastFetched = state.fetchedGameCategories[selectedGameCategory];
+    const lastFetched =
+      state.fetchedGameCategories[selectedGameCategory.categoryId];
+
     if (!lastFetched) return true; // never fetched before
 
     const now = Date.now();

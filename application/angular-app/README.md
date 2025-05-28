@@ -6,4 +6,4 @@
 // PRODUCTION
 
     "appBucket": "buzzbrain-production---app",
-    "distributionId": "E1ES4NL9GO1BYO"
+    "distributionId": "EQ90DJ2AAHRD3"
