@@ -30,7 +30,7 @@ export const getGameCategoriesEffect = createEffect(
 
         return gameCategoriesService.getGameCategories().pipe(
           map((gameCategories) => {
-            if (gameCategories?.error.message === 'Unauthorized') {
+            if (gameCategories?.error?.message === 'Unauthorized') {
               return AuthActions.RefreshTokens.initiate();
             }
 
