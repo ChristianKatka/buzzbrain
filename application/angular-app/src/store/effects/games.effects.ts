@@ -11,7 +11,7 @@ import {
   withLatestFrom,
 } from 'rxjs/operators';
 import { GamesService } from '../../app/services/games.service';
-import { AuthActions, gamesActions } from '../actions';
+import { gamesActions, RetryActions } from '../actions';
 import { getSelectedGameCategory } from '../selectors/game-categories.selectors';
 import { shouldFetchGamesForSelectedCategory } from '../selectors/games.selectors';
 
@@ -25,7 +25,7 @@ export const getGamesByCategoryEffect = createEffect(
       ofType(gamesActions.getGamesByCategory.initiate),
       withLatestFrom(store.select(shouldFetchGamesForSelectedCategory)),
       withLatestFrom(store.select(getSelectedGameCategory)),
-      switchMap(([[_, shouldFetch], selectedCategory]) => {
+      switchMap(([[originalAction, shouldFetch], selectedCategory]) => {
         if (!shouldFetch) {
           return of(gamesActions.getGamesByCategory.noFetchNeeded());
         }
@@ -34,14 +34,20 @@ export const getGamesByCategoryEffect = createEffect(
           .getGamesByCategory(selectedCategory.categoryId)
           .pipe(
             map((games) => {
-              if (games?.error?.message === 'Unauthorized') {
-                return AuthActions.RefreshTokens.initiate();
-              }
               return gamesActions.getGamesByCategory.success({
                 games,
               });
             }),
             catchError((error) => {
+              if (error?.message === 'Unauthorized') {
+                return of(
+                  RetryActions.AuthenticateWithRefreshTokenAfterUnauthorizedApiResponse.initiate(
+                    {
+                      originalAction: originalAction,
+                    }
+                  )
+                );
+              }
               console.error('getGamesByCategoryEffect error:', error);
               return of(gamesActions.getGamesByCategory.error({ error }));
             })

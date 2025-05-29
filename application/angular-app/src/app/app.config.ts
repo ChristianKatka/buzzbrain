@@ -7,6 +7,7 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import * as authEffects from '../store/effects/auth/auth.effects';
 import * as gameCategoriesEffects from '../store/effects/game-categories.effects';
 import * as gamesEffects from '../store/effects/games.effects';
+import * as retryEffects from '../store/effects/retry.effects';
 import { metaReducers } from '../store/reducers';
 import { authTokensReducer } from '../store/reducers/auth/auth-tokens.reducer';
 import { authUiReducer } from '../store/reducers/auth/auth-ui.reducer';
@@ -29,7 +30,12 @@ export const appConfig: ApplicationConfig = {
         metaReducers: metaReducers,
       }
     ),
-    provideEffects(authEffects, gameCategoriesEffects, gamesEffects),
+    provideEffects(
+      authEffects,
+      gameCategoriesEffects,
+      gamesEffects,
+      retryEffects
+    ),
     provideStoreDevtools({
       maxAge: 25,
       autoPause: true,
