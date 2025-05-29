@@ -8,6 +8,8 @@ export class GameCategoriesService {
   authHttp = inject(AuthHTTPService);
 
   getGameCategories(): Observable<any> {
+    console.log('getGameCategories service');
+
     return this.authHttp.get(`${environment.apiBaseUrl}/game-categories`);
   }
 }

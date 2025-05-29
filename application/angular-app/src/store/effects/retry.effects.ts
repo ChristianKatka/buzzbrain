@@ -32,11 +32,20 @@ export const AuthenticateWithRefreshTokenAfterUnauthorizedApiResponseEffect =
         ),
         withLatestFrom(store.select(AuthTokensSelectors.getRefreshToken)),
         switchMap(([action, refreshToken]) => {
+          console.log('Retry effect alko!');
+          console.log('refreshToken');
+          console.log(refreshToken);
+
           // inside action is original action that was rejected because unauthorized
           if (!refreshToken) {
             // When there is no refresh token, user is not authenticated so logout
+            console.log('Ei ollu refresh token joten logout');
+
             return of(AuthActions.Logout());
           }
+
+          console.log('OLi refresh token jote kutsu service refresh token');
+
           return authService.refreshTokens(refreshToken).pipe(
             mergeMap((response) => {
               if (response?.error) {
@@ -46,6 +55,8 @@ export const AuthenticateWithRefreshTokenAfterUnauthorizedApiResponseEffect =
                   })
                 );
               }
+
+              console.log('Saatii refresh token joten yritä uusiks');
 
               return of(
                 AuthActions.RefreshTokens.success({ response }),

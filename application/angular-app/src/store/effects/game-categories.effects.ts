@@ -24,6 +24,11 @@ export const getGameCategoriesEffect = createEffect(
       ofType(gameCategoriesActions.getGameCategories.initiate),
       withLatestFrom(store.select(shouldFetchGameCategories)),
       switchMap(([originalAction, shouldFetch]) => {
+        console.log('1 getGameCategoriesEffect');
+
+        console.log('shouldFetch');
+        console.log(shouldFetch);
+
         if (!shouldFetch) {
           return of(gameCategoriesActions.getGameCategories.noFetchNeeded());
         }
@@ -34,9 +39,14 @@ export const getGameCategoriesEffect = createEffect(
               gameCategories,
             });
           }),
-          catchError((error) => {
-            console.error('getGameCategories error:', error);
-            if (error?.message === 'Unauthorized') {
+          catchError((err) => {
+            console.error('getGameCategories error:');
+            console.log(err);
+            console.log(err?.message);
+
+            if (err?.error?.message === 'Unauthorized') {
+              console.log('inside catch error of Unauthorized');
+
               return of(
                 RetryActions.AuthenticateWithRefreshTokenAfterUnauthorizedApiResponse.initiate(
                   {
@@ -45,7 +55,12 @@ export const getGameCategoriesEffect = createEffect(
                 )
               );
             }
-            return of(gameCategoriesActions.getGameCategories.error({ error }));
+
+            console.log('ei osunut iffii ja palautettuuu get error');
+
+            return of(
+              gameCategoriesActions.getGameCategories.error({ error: err })
+            );
           })
         );
       })

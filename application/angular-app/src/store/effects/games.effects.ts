@@ -38,8 +38,8 @@ export const getGamesByCategoryEffect = createEffect(
                 games,
               });
             }),
-            catchError((error) => {
-              if (error?.message === 'Unauthorized') {
+            catchError((err) => {
+              if (err?.error?.message === 'Unauthorized') {
                 return of(
                   RetryActions.AuthenticateWithRefreshTokenAfterUnauthorizedApiResponse.initiate(
                     {
@@ -48,8 +48,8 @@ export const getGamesByCategoryEffect = createEffect(
                   )
                 );
               }
-              console.error('getGamesByCategoryEffect error:', error);
-              return of(gamesActions.getGamesByCategory.error({ error }));
+              console.error('getGamesByCategoryEffect error:', err);
+              return of(gamesActions.getGamesByCategory.error({ error: err }));
             })
           );
       })
