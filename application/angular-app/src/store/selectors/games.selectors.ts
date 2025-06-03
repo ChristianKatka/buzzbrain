@@ -44,11 +44,18 @@ export const getSelectedGame = createSelector(
   selectGamesState,
   getSelectedGameCategory,
   (state, selectedGameCategory) => {
+    console.log('SELECTED GAME:::');
+
     if (!selectedGameCategory) return undefined;
     if (!state.selectedGame) return undefined;
 
     const selectedGategoryGames: any =
       state.gamesByCategory[selectedGameCategory.categoryId];
+    console.log('selectedGategoryGames');
+    console.log(selectedGategoryGames);
+
+    console.log('selectedGame');
+    console.log(selectedGategoryGames[state.selectedGame]);
 
     return selectedGategoryGames[state.selectedGame];
   }
