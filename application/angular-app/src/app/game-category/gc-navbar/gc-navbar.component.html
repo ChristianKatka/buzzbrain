@@ -3,17 +3,17 @@
     class="flex flex-col sm:flex-row justify-between items-center gap-3 max-w-[1800px] mx-auto"
   >
     <div class="flex items-center gap-2">
-      <button mat-icon-button routerLink="/">
+      <button mat-icon-button (click)="goBack()">
         <mat-icon>arrow_back_ios</mat-icon>
       </button>
-      <app-logo routerLink="/" [size]="'sm'" class="cursor-pointer"></app-logo>
+      <!-- <app-logo routerLink="/" [size]="'sm'" class="cursor-pointer"></app-logo> -->
     </div>
 
     <div class="flex items-center gap-2">
       <img
         [src]="selectedGameCategory()?.logo"
         alt="Logo"
-        class="h-10 w-auto"
+        class="h-16 w-auto"
       />
     </div>
 

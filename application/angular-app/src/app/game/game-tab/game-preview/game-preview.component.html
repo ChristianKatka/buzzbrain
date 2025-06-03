@@ -1,3 +1,27 @@
 <div class="flex items-center w-full justify-center my-10 mb-10">
   <h1>Pelin esikatselu</h1>
 </div>
+
+<div class="p-6 max-w-[1800px] mx-auto">
+  <div
+    class="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 min-h-0"
+  >
+    @for (question of game()?.questions; track $index) {
+    <div
+      class="relative border border-gray-200/50 rounded-xl overflow-hidden shadow-md h-64"
+      style="
+        background-image: url('video-bg-as-image.png');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <!-- Overlay behind text -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <p class="text-white text-xl font-bold text-center px-4">
+          {{ question.text }}
+        </p>
+      </div>
+    </div>
+    }
+  </div>
+</div>
