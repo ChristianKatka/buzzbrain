@@ -1,7 +1,2 @@
 @use "../../../../../styles/mixins/mixins.scss" as styles;
 @include styles.disable-auto-zoom-on-iphone-input-fields;
-
-form {
-  display: flex;
-  flex-direction: column;
-}

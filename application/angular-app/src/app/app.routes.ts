@@ -64,6 +64,13 @@ export const routes: Routes = [
           import('./game/game.component').then((m) => m.GameComponent),
       },
       {
+        path: 'category/:categoryId/:gameId/print',
+        loadComponent: () =>
+          import('./game-category/print-game/print-game.component').then(
+            (m) => m.PrintGameComponent
+          ),
+      },
+      {
         path: 'category/:categoryId/:gameId/game',
         canActivate: [AuthenticatedGuard],
         loadComponent: () =>

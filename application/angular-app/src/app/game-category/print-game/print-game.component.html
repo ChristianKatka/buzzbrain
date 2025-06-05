@@ -1,231 +1,30 @@
-<app-gc-navbar></app-gc-navbar>
-<h1>Tässä voit tulostaa pelin laput asiakkaille eli pelaajille</h1>
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-
-<div class="flex flex-col m-5 gap-4">
+<div class="flex justify-center">
   <button
-    class="px-6 py-2 rounded-2xl bg-blue-600 text-white font-medium shadow-md hover:bg-blue-700 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300 active:scale-95"
+    (click)="printPage()"
+    class="no-print px-4 py-2 mt-8 bg-blue-600 text-white rounded"
   >
-    Click me
+    Tulosta
   </button>
+</div>
 
-  <button
-    class="px-5 py-2 text-sm font-semibold text-white bg-indigo-600 border border-indigo-700 rounded-full hover:bg-indigo-700 transition active:scale-95"
-  >
-    Best button
-  </button>
-  <button
-    class="px-8 py-2 rounded-full bg-gradient-to-b from-blue-400 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200"
-  >
-    Gradient
-  </button>
+<div
+  class="p-10 text-black print:text-black print:bg-white print:p-0 print:m-0"
+>
+  <h1 class="text-2xl font-bold mb-6 text-center">Vastaus lappu</h1>
 
-  <button class="p-[3px] relative">
-    <div
-      class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg"
-    ></div>
-
-    <div
-      class="px-8 py-2 bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent"
-    >
-      Lit up borders
-    </div>
-  </button>
-
-  <button
-    class="shadow-[inset_0_0_0_2px_#616467] text-black px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#616467] hover:text-white dark:text-neutral-200 transition duration-200"
-  >
-    Playlist
-  </button>
-
-  <a href="#_" class="relative inline-block text-lg group">
-    <span
-      class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white"
-    >
-      <span
-        class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"
-      ></span>
-      <span
-        class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"
-      ></span>
-      <span class="relative">Button Text</span>
-    </span>
-    <span
-      class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
-      data-rounded="rounded-lg"
-    ></span>
-  </a>
-
-  <a
-    href="#_"
-    class="rounded-md px-3.5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-indigo-600 text-indigo-600 text-white"
-  >
-    <span
-      class="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-indigo-600 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"
-    ></span>
-    <span
-      class="relative text-indigo-600 transition duration-300 group-hover:text-white ease"
-      >Button Text</span
-    >
-  </a>
-
-  <a
-    href="#_"
-    class="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
-  >
-    <span
-      class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"
-    ></span>
-    <span class="relative">Button Text</span>
-  </a>
-
-  <button
-    class="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 border border-green-600 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300 active:scale-95"
-  >
-    <span
-      class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"
-    ></span>
-    <span class="relative z-10">Button Text</span>
-  </button>
-
-  <div
-    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
-  >
-    <a href="#">
-      <img class="rounded-t-lg" src="/2020.jpg" alt="image" />
-    </a>
-    <div class="p-5">
-      <a href="#">
-        <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-        >
-          Noteworthy technology acquisitions 2021
-        </h5>
-      </a>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        Here are the biggest enterprise technology acquisitions of 2021 so far,
-        in reverse chronological order.
-      </p>
-      <a
-        href="#"
-        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-      >
-        Read more
-        <svg
-          class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
-      </a>
+  <!-- Answer lines -->
+  <div class="space-y-8 mb-16">
+    <div *ngFor="let n of numbers" class="flex items-end">
+      <span class="mr-3 w-6 text-right text-base leading-none">{{ n }}.</span>
+      <div class="flex-grow border-b-2 border-gray-800"></div>
     </div>
   </div>
 
-  <a
-    href="#"
-    class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-  >
-    <img
-      class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-      src="/2020.jpg"
-      alt=""
-    />
-    <div class="flex flex-col justify-between p-4 leading-normal">
-      <h5
-        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-      >
-        Noteworthy technology acquisitions 2021
-      </h5>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        Here are the biggest enterprise technology acquisitions of 2021 so far,
-      </p>
-    </div>
-  </a>
-
-  <div
-    class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
-  >
-    <form class="space-y-6" action="#">
-      <h5 class="text-xl font-medium text-gray-900 dark:text-white">
-        Sign in to our platform
-      </h5>
-      <div>
-        <label
-          for="email"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >Your email</label
-        >
-        <input
-          type="email"
-          name="email"
-          id="email"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-          placeholder="name@company.com"
-          required
-        />
-      </div>
-      <div>
-        <label
-          for="password"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >Your password</label
-        >
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="••••••••"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-          required
-        />
-      </div>
-      <div class="flex items-start">
-        <div class="flex items-start">
-          <div class="flex items-center h-5">
-            <input
-              id="remember"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-              required
-            />
-          </div>
-          <label
-            for="remember"
-            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Remember me</label
-          >
-        </div>
-        <a
-          href="#"
-          class="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
-          >Lost Password?</a
-        >
-      </div>
-      <button
-        type="submit"
-        class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-      >
-        Login to your account
-      </button>
-      <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-        Not registered?
-        <a href="#" class="text-blue-700 hover:underline dark:text-blue-500"
-          >Create account</a
-        >
-      </div>
-    </form>
+  <!-- Team Name field -->
+  <div class="flex items-end">
+    <label class="mr-4 text-base font-medium w-28 text-gray-800"
+      >Tiimin nimi:</label
+    >
+    <div class="flex-grow border-b-2 border-gray-800"></div>
   </div>
 </div>
