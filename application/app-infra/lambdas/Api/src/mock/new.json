@@ -1,0 +1,499 @@
+[
+  {
+    "image": "/games/bg-1.webp",
+    "text": "2. Mikä on maailman pisin joki?",
+    "answer": "Amazon-joki"
+  },
+  {
+    "image": "/games/bg-1.webp",
+    "text": "3. Mikä planeetta on lähimpänä aurinkoa?",
+    "answer": "Merkurius"
+  },
+  {
+    "image": "/games/bg-1.webp",
+    "text": "5. Mikä on suomalaisen Formula 1 -kuljettaja Kimi Räikkösen lempinimi?",
+    "answer": "Iceman"
+  },
+  {
+    "image": "/games/bg-1.webp",
+    "text": "6. Mikä on Italian valuutta ennen euroa?",
+    "answer": "Lira"
+  },
+
+  {
+    "image": "/games/bg-1.webp",
+    "text": "9. Mikä eläin on tunnettu siitä, että se nukkuu pää alaspäin?",
+    "answer": "Lepakko"
+  },
+  {
+    "image": "/games/bg-1.webp",
+    "text": "10. Mistä kaupungista The Beatles -yhtye on kotoisin?",
+    "answer": "Liverpool"
+  },
+
+  [
+    {
+      "image": "/games/bg-1.webp",
+      "text": "11. Mikä elementti on kemialliselta lyhenteeltään 'O'?",
+      "answer": "Happi"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "12. Missä kaupungissa järjestettiin vuoden 2000 kesäolympialaiset?",
+      "answer": "Sydney"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "13. Mikä on maailman suurin saari (ei mantereeksi luokiteltu)?",
+      "answer": "Grönlanti"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "14. Kuka näytteli pääosaa elokuvassa Forrest Gump?",
+      "answer": "Tom Hanks"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "15. Mihin eläinlajiin kuuluu vesinokkaeläin?",
+      "answer": "Nisäkkäisiin"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "16. Kuka on suomalainen jääkiekkoilija, joka tunnetaan lempinimellä 'The Finnish Flash'?",
+      "answer": "Teemu Selänne"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "17. Minkä bändin kappaleita ovat mm. 'Bohemian Rhapsody' ja 'Don't Stop Me Now'?",
+      "answer": "Queen"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "18. Kuka oli Neuvostoliiton viimeinen johtaja?",
+      "answer": "Mihail Gorbatšov"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "19. Missä maassa juustofondue on perinteinen ruoka?",
+      "answer": "Sveitsi"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "20. Mikä tunnettu teknologiayhtiö julkaisi ensimmäisen iPhonen vuonna 2007?",
+      "answer": "Apple"
+    }
+  ],
+  [
+    {
+      "image": "/games/bg-1.webp",
+      "text": "21. Mikä kieli on maailman puhutuin äidinkielenä?",
+      "answer": "Mandariinikiina"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "22. Mikä suomalainen juhlapäivä sijoittuu kesäpäivänseisauksen tienoille?",
+      "answer": "Juhannus"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "23. Kuinka monta ruutua on shakkinappulalautaan aseteltavassa standardilaudassa?",
+      "answer": "64"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "24. Kuka sävelsi 'Joutsenen' osana teosta 'Eläinten karnevaali'?",
+      "answer": "Camille Saint-Saëns"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "25. Mikä on virallinen valuutta Japanissa?",
+      "answer": "Jeni"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "26. Kuinka monta tähteä on Euroopan unionin lipussa?",
+      "answer": "12"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "27. Mikä eläin esiintyy Suomen vaakunassa?",
+      "answer": "Leijona"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "28. Missä kaupungissa järjestettiin ensimmäiset modernit olympialaiset vuonna 1896?",
+      "answer": "Ateena"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "29. Mitä tarkoittaa latinankielinen ilmaus 'Carpe diem'?",
+      "answer": "Tartu hetkeen"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "30. Kuka kirjoitti romaanin 'Sinuhe egyptiläinen'?",
+      "answer": "Mika Waltari"
+    }
+  ],
+  [
+    {
+      "image": "/games/bg-1.webp",
+      "text": "31. Minkä suuryrityksen perustaja Mark Zuckerberg oli keskiössä Facebookin tietoskandaalissa vuonna 2018?",
+      "answer": "Cambridge Analytica"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "32. Missä kaupungissa tapahtui traaginen tulipalo Grenfell Towerissa vuonna 2017?",
+      "answer": "Lontoo"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "33. Minkä niminen sovellus, joka julkaistiin 2016, sai ihmiset jahtaamaan digitaalisia hirviöitä ulkona?",
+      "answer": "Pokémon GO"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "34. Kuka voitti Suomen ensimmäisen Euroviisuvoiton vuonna 2006 ja edusti Suomea uudelleen 2010-luvulla?",
+      "answer": "Lordi"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "35. Kuka voitti jääkiekon maailmanmestaruuden vuosina 2011 ja 2019?",
+      "answer": "Suomi"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "36. Mikä maailmanlaajuinen ilmiö sai alkunsa vuonna 2017 ja kannusti puhumaan seksuaalisesta häirinnästä?",
+      "answer": "#MeToo-liike"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "37. Kuka näytteli pääroolia elokuvassa Joker (2019)?",
+      "answer": "Joaquin Phoenix"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "38. Minkä hittisarjan viimeinen kausi julkaistiin vuonna 2019 ja sai paljon kritiikkiä?",
+      "answer": "Game of Thrones"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "39. Kuka oli Yhdysvaltain presidentti koko 2010-luvun jälkipuoliskon?",
+      "answer": "Donald Trump"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "40. Mikä suomalainen rockfestivaali vietti 20-vuotisjuhliaan vuonna 2019?",
+      "answer": "Ruisrock"
+    }
+  ],
+  [
+    {
+      "image": "/games/bg-1.webp",
+      "text": "41. Mikä Disney-elokuva vuodelta 2013 sisältää kappaleen 'Let It Go'?",
+      "answer": "Frozen"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "42. Mikä konsoli julkaistiin vuonna 2017 ja mahdollistaa pelaamisen sekä telkkarissa että käsikonsolina?",
+      "answer": "Nintendo Switch"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "43. Mikä tv-sarja sijoittuu 1980-luvulle ja sisältää yliluonnollisia ilmiöitä sekä hahmon nimeltä 'Eleven'?",
+      "answer": "Stranger Things"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "44. Minkä yhtyeen viimeinen konsertti Helsingissä vuonna 2015 kantoi nimeä 'End of the Road World Tour'?",
+      "answer": "KISS"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "45. Mikä sarjakuviin perustuva elokuva rikkoi kaikki lipputulokasennukset vuonna 2019?",
+      "answer": "Avengers: Endgame"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "46. Mikä hittipeli teki Battle Royale -pelimuodosta ilmiön vuonna 2017?",
+      "answer": "Fortnite"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "47. Kuka suomalainen laulaja voitti The Voice of Finlandin vuonna 2014 ja nousi suureen suosioon?",
+      "answer": "Antti Railio"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "48. Mikä suomalainen tv-ohjelma yhdisti ruokaa ja deittailua, ja alkoi vuonna 2016?",
+      "answer": "Temptation Island Suomi"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "49. Mikä mobiilipeli teki sanasta 'saga' tunnetun karkkiseikkailun yhteydessä?",
+      "answer": "Candy Crush Saga"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "50. Missä kaupungissa järjestettiin Slush-tapahtuma, josta tuli 2010-luvulla maailman tunnetuimpia startup-konferensseja?",
+      "answer": "Helsinki"
+    }
+  ],
+  [
+    {
+      "image": "/games/bg-1.webp",
+      "text": "1. Mikä Disney-elokuva vuodelta 2013 sisältää kappaleen 'Let It Go'?",
+      "answer": "Frozen"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "2. Mikä konsoli julkaistiin vuonna 2017 ja mahdollistaa pelaamisen sekä telkkarissa että käsikonsolina?",
+      "answer": "Nintendo Switch"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "3. Mikä tv-sarja sijoittuu 1980-luvulle ja sisältää yliluonnollisia ilmiöitä sekä hahmon nimeltä 'Eleven'?",
+      "answer": "Stranger Things"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "4. Mikä sarjakuviin perustuva elokuva rikkoi kaikki lipputulokasennukset vuonna 2019?",
+      "answer": "Avengers: Endgame"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "5. Mikä hittipeli teki Battle Royale -pelimuodosta ilmiön vuonna 2017?",
+      "answer": "Fortnite"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "6. Mikä mobiilipeli teki sanasta 'saga' tunnetun karkkiseikkailun yhteydessä?",
+      "answer": "Candy Crush Saga"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "7. Missä kaupungissa järjestetään Slush-tapahtuma, josta tuli 2010-luvulla maailman tunnetuimpia startup-konferensseja?",
+      "answer": "Helsinki"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "8. Kuka artisti julkaisi albumin nimeltä '1989' vuonna 2014?",
+      "answer": "Taylor Swift"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "9. Mikä sarja tunnetaan hahmoista nimeltä Jon Snow, Daenerys ja Tyrion?",
+      "answer": "Game of Thrones"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "10. Mikä sovellus mahdollisti lyhyiden huulisynkka-videoiden tekemisen ja nousi 2010-luvun lopussa valtavaan suosioon?",
+      "answer": "TikTok"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "11. Kuka suomalainen pop-artisti nousi kansainväliseen suosioon kappaleella 'Karma'?",
+      "answer": "Alma"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "12. Mikä ruotsalainen dekkarisarja sai uuden tulemisen vuonna 2011 elokuvalla, jonka pääosassa oli Daniel Craig?",
+      "answer": "Miehet jotka vihaavat naisia (The Girl with the Dragon Tattoo)"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "13. Mikä vaatekappale nousi muoti-ilmiöksi nimellä 'onesie'?",
+      "answer": "Haalaripuku / Yöpuku aikuisille"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "14. Kuka julkaisi kappaleet 'Happy' ja 'Get Lucky' 2010-luvulla?",
+      "answer": "Pharrell Williams"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "15. Mikä suomalainen rap-artisti julkaisi albumin 'Jare Henrik Tiihonen 2' vuonna 2010?",
+      "answer": "Cheek"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "16. Mikä on nimeltään Netflixin hittisarja, jossa tutkitaan rikoksia ja psykologisia profiileja 1970-luvulla?",
+      "answer": "Mindhunter"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "17. Missä pelissä rakennetaan kuutioista maailmaa ja se saavutti huippusuosion 2010-luvulla?",
+      "answer": "Minecraft"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "18. Mikä trendi levisi Instagramissa liittyen värikkäisiin kulmakarvoihin ja korostettuihin kasvoihin?",
+      "answer": "Meikkitutoriaalit / Instagram-meikki"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "19. Mikä urheilulaji sai uuden suosion Suomessa, kun Superpesis sai lisää näkyvyyttä 2010-luvulla?",
+      "answer": "Pesäpallo"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "20. Mikä elokuva vuodelta 2016 kertoo muusikko Elton Johnin elämästä?",
+      "answer": "Rocketman"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "21. Mikä oli hittikomediaelokuva vuodelta 2011, jossa esiintyvät mm. Kristen Wiig ja Melissa McCarthy?",
+      "answer": "Morsiusneidot (Bridesmaids)"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "22. Kuka suomalainen tubettaja julkaisi suosittua sisältöä nimellä 'Justimusfilms'?",
+      "answer": "Riku Suokas, Juho Nummela ja Sami Harmaala"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "23. Mikä urheilutapahtuma pidettiin Lontoossa vuonna 2012?",
+      "answer": "Kesäolympialaiset"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "24. Mikä tanssityyli teki paluun 2010-luvulla mm. Shufflaamisen ja Harlem Shaken muodossa?",
+      "answer": "Virustanssit"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "25. Mikä tunnettu tv-ohjelma alkoi nimellä 'Yökylässä Maria Veitola'?",
+      "answer": "Yökylässä Maria Veitola"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "26. Mikä suomalainen elokuva vuodelta 2016 perustuu Tuntemattomaan sotilaaseen?",
+      "answer": "Tuntematon sotilas (Aku Louhimiehen versio)"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "27. Mikä laite korvasi monet MP3-soittimet 2010-luvulla?",
+      "answer": "Älypuhelin"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "28. Mikä alusta oli tunnetuin meemien jakamiseen 2010-luvun alkupuolella?",
+      "answer": "9GAG"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "29. Kuka oli suosittu suomalainen laulaja, joka levytti duetot mm. Jenni Vartiaisen kanssa?",
+      "answer": "Jari Sillanpää"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "30. Mikä on LEGO-henkinen elokuva, joka sai ensi-iltansa 2014?",
+      "answer": "The LEGO Movie"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "31. Mikä ohjelma teki paluun vuonna 2016 Jaajo Linnonmaan juontamana?",
+      "answer": "Haluatko miljonääriksi?"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "32. Mikä oli Instagramin suosituin filtteri 2010-luvulla?",
+      "answer": "Clarendon"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "33. Mikä pelisarja julkaisi osat 'Black Ops II' ja 'Modern Warfare Remastered' 2010-luvulla?",
+      "answer": "Call of Duty"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "34. Mikä laulaja tunnetaan kappaleista 'Bad Romance' ja 'Shallow'?",
+      "answer": "Lady Gaga"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "35. Missä sarjassa seurattiin modernin perheen elämää usean eri näkökulman kautta?",
+      "answer": "Moderni perhe (Modern Family)"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "36. Mikä vaatemerkki yhdistettiin vahvasti hipster-kulttuuriin 2010-luvulla?",
+      "answer": "Supreme"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "37. Mikä vuoden 2015 elokuva yhdisti dinosaurukset ja huvipuiston?",
+      "answer": "Jurassic World"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "38. Kuka suomalainen koomikko teki läpimurron Putouksen hahmolla 'Marja Tyrni'?",
+      "answer": "Krista Kosonen"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "39. Mikä ruoka nousi ilmiöksi 2010-luvulla ja liittyi kermaisiin kulhoruokiin ja Instagramiin?",
+      "answer": "Smoothie bowl"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "40. Mikä suomalainen peli muistetaan sanonnasta 'Finish him!' ja tuli takaisin mobiilina?",
+      "answer": "Mortal Kombat"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "41. Mikä kansainvälinen ilmiö liittyi värityskirjoihin aikuisille?",
+      "answer": "Mindfulness-väritys"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "42. Mikä Netflix-dokumentti kertoi Fyre Festivalin epäonnistumisesta?",
+      "answer": "Fyre: The Greatest Party That Never Happened"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "43. Mikä urheilija juoksi maailmanennätyksen 100 metrillä ja jäi eläkkeelle 2010-luvulla?",
+      "answer": "Usain Bolt"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "44. Mikä applikaatio mahdollisti itsestään katoavat viestit ja kuvien jakamisen?",
+      "answer": "Snapchat"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "45. Mikä termi kuvaa ilmiötä, jossa ihmiset katsovat sarjoja useita jaksoja putkeen?",
+      "answer": "Binge-watching"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "46. Mikä suomalainen juontaja nousi suureen suosioon YleX:n ja podcastien kautta?",
+      "answer": "Tuomas Enbuske"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "47. Mikä hittibiisi alkoi sanoilla 'Oppan Gangnam Style'?",
+      "answer": "Gangnam Style"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "48. Mikä teknologinen keksintö mahdollisti älykotien kasvun (esim. Alexa, Google Home)?",
+      "answer": "Älykaiutin / Smart speaker"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "49. Mikä Disney/Pixar-elokuva kertoi lapsesta nimeltä Miguel ja kuolleiden valtakunnasta?",
+      "answer": "Coco"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "50. Mikä oli hittivillitys, jossa pieni laite pyöri sormien välissä?",
+      "answer": "Fidget spinner"
+    },
+    {
+      "image": "/games/bg-1.webp",
+      "text": "51. Mikä sovellus käytti koiran naamoja ja kukkaseppeleitä kasvofilttereinä?",
+      "answer": "Snapchat"
+    }
+  ]
+]
