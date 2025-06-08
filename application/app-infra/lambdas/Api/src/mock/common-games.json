@@ -13,13 +13,8 @@
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "2. Mikä on maailman suurin aavikko pinta-alaltaan?",
-        "answer": "Antarktis"
-      },
-      {
-        "image": "/games/bg-1.webp",
-        "text": "3. Minkä muinaisen kaupungin rauniot löytyvät nykyisen Irakin alueelta ja tunnetaan portistaan nimeltä Ishtar?",
-        "answer": "Babylon"
+        "text": "2. Mikä on maailman suurin lämmin aavikko pinta-alaltaan?",
+        "answer": "Sahara"
       },
       {
         "image": "/games/bg-1.webp",
@@ -30,11 +25,6 @@
         "image": "/games/bg-1.webp",
         "text": "5. Minkä niminen valtio tunnettiin aiemmin nimellä Birma?",
         "answer": "Myanmar"
-      },
-      {
-        "image": "/games/bg-1.webp",
-        "text": "6. Kuka kirjoitti romaanin '1984'?",
-        "answer": "George Orwell"
       },
       {
         "image": "/games/bg-1.webp",
@@ -50,11 +40,6 @@
         "image": "/games/bg-1.webp",
         "text": "9. Mikä on kemiallinen merkki hopealle?",
         "answer": "Ag"
-      },
-      {
-        "image": "/games/bg-1.webp",
-        "text": "10. Missä Euroopan maassa käytetään kruunua valuuttana, mutta ei kuulu euroalueeseen?",
-        "answer": "Ruotsi"
       }
     ]
   },
@@ -67,21 +52,6 @@
     "questions": [
       {
         "image": "/games/bg-1.webp",
-        "text": "1. Missä kaupungissa sijaitsee Euroopan parlamentin päätoimipaikka?",
-        "answer": "Strasbourg"
-      },
-      {
-        "image": "/games/bg-1.webp",
-        "text": "2. Mikä antiikin seitsemästä ihmeestä sijaitsi nykyisen Turkin alueella ja tuhoutui maanjäristyksessä?",
-        "answer": "Artemiin temppeli"
-      },
-      {
-        "image": "/games/bg-1.webp",
-        "text": "3. Kuka on nykyinen Yhdysvaltain varapresidentti (vuonna 2024)?",
-        "answer": "Kamala Harris"
-      },
-      {
-        "image": "/games/bg-1.webp",
         "text": "4. Minkä uskonnon pyhä kirja on Tripitaka?",
         "answer": "Buddhalaisuus"
       },
@@ -92,12 +62,7 @@
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "6. Mikä valtio tunnetaan 'vihreänä saarena' ja käyttää edelleen puntia valuuttanaan?",
-        "answer": "Irlanti"
-      },
-      {
-        "image": "/games/bg-1.webp",
-        "text": "7. Minkä suomalaisen järven nimi tarkoittaa 'pitkää järveä' ja on Suomen toiseksi suurin?",
+        "text": "7. Mikä on Suomen toiseksi suurin järvi?",
         "answer": "Päijänne"
       },
       {
@@ -107,13 +72,8 @@
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "9. Mikä kirjain on morse-koodissa lyhyt-pitkä (·–)?",
-        "answer": "A"
-      },
-      {
-        "image": "/games/bg-1.webp",
         "text": "10. Mihin kaupunkiin perustettiin ensimmäinen McDonald’s-ravintola vuonna 1940?",
-        "answer": "San Bernardino"
+        "answer": "San Bernardino, California"
       }
     ]
   }
