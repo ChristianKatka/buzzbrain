@@ -14,26 +14,6 @@
   [
     {
       "image": "/games/bg-1.webp",
-      "text": "21. Mikä on maailman puhutuin kieli?",
-      "answer": "Mandariinikiina"
-    },
-    {
-      "image": "/games/bg-1.webp",
-      "text": "23. Kuinka monta ruutua on shakkilaudassa?",
-      "answer": "64"
-    },
-    {
-      "image": "/games/bg-1.webp",
-      "text": "25. Mikä on virallinen valuutta Japanissa?",
-      "answer": "Jeni"
-    },
-    {
-      "image": "/games/bg-1.webp",
-      "text": "26. Kuinka monta tähteä on Euroopan unionin lipussa?",
-      "answer": "12"
-    },
-    {
-      "image": "/games/bg-1.webp",
       "text": "27. Mikä eläin esiintyy Suomen vaakunassa?",
       "answer": "Leijona"
     }
@@ -44,21 +24,13 @@
       "text": "32. Missä kaupungissa tapahtui traaginen tulipalo Grenfell Towerissa vuonna 2017?",
       "answer": "Lontoo"
     },
-    {
-      "image": "/games/bg-1.webp",
-      "text": "33. Minkä niminen sovellus, joka julkaistiin 2016, sai ihmiset jahtaamaan digitaalisia hirviöitä ulkona?",
-      "answer": "Pokémon GO"
-    },
+
     {
       "image": "/games/bg-1.webp",
       "text": "34. Kuka voitti Suomen ensimmäisen Euroviisuvoiton vuonna 2006 ja edusti Suomea uudelleen 2010-luvulla?",
       "answer": "Lordi"
     },
-    {
-      "image": "/games/bg-1.webp",
-      "text": "37. Kuka näytteli pääroolia elokuvassa Joker (2019)?",
-      "answer": "Joaquin Phoenix"
-    },
+
     {
       "image": "/games/bg-1.webp",
       "text": "40. Mikä suomalainen rockfestivaali vietti 20-vuotisjuhliaan vuonna 2019?",
@@ -68,22 +40,11 @@
   [
     {
       "image": "/games/bg-1.webp",
-      "text": "42. Mikä konsoli julkaistiin vuonna 2017 ja mahdollistaa pelaamisen sekä telkkarissa että käsikonsolina?",
-      "answer": "Nintendo Switch"
-    },
-    {
-      "image": "/games/bg-1.webp",
       "text": "44. Mikä oli KISS yhtyeen viimeisen konsertti kiertueen nimi?",
       "answer": "End of the Road World Tour"
     }
   ],
   [
-    {
-      "image": "/games/bg-1.webp",
-      "text": "11. Kuka suomalainen pop-artisti nousi kansainväliseen suosioon kappaleella 'Karma'?",
-      "answer": "Alma"
-    },
-
     {
       "image": "/games/bg-1.webp",
       "text": "20. Mikä elokuva vuodelta 2019 kertoo muusikko Elton Johnin elämästä?",
@@ -98,19 +59,8 @@
 
     {
       "image": "/games/bg-1.webp",
-      "text": "31. Mikä ohjelma teki paluun vuonna 2016 Jaajo Linnonmaan juontamana?",
-      "answer": "Haluatko miljonääriksi?"
-    },
-    {
-      "image": "/games/bg-1.webp",
       "text": "34. Mikä laulaja tunnetaan kappaleista 'Bad Romance' ja 'Shallow'?",
       "answer": "Lady Gaga"
-    },
-
-    {
-      "image": "/games/bg-1.webp",
-      "text": "50. Mikä oli hittivillitys, jossa pieni laite pyöri sormien välissä?",
-      "answer": "Fidget spinner"
     }
   ]
 ]

@@ -116,5 +116,64 @@
         "answer": "Happi"
       }
     ]
+  },
+  {
+    "gameId": "common-knowledge-questions-3",
+    "categoryId": "common-knowledge",
+    "title": "Yleistieto: kysymyspaketti 3",
+    "description": "Yleistieto 3 kysymyksiä iltaan kuin päiväänkin",
+    "image": "new/game-categories/common-knowledge/yleistieto-game3.webp",
+    "questions": [
+      {
+        "image": "/games/bg-1.webp",
+        "text": "1. Mikä on maailman puhutuin kieli?",
+        "answer": "Mandariinikiina"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "2. Kuinka monta ruutua on shakkilaudassa?",
+        "answer": "64"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "3. Kuinka monta tähteä on Euroopan unionin lipussa?",
+        "answer": "12"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "4. Mikä on virallinen valuutta Japanissa?",
+        "answer": "Jeni"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "5. Minkä niminen sovellus, joka julkaistiin 2016, sai ihmiset jahtaamaan digitaalisia hirviöitä ulkona?",
+        "answer": "Pokémon GO"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "6. Kuka näytteli pääroolia elokuvassa Joker (2019)?",
+        "answer": "Joaquin Phoenix"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "7. Mikä konsoli julkaistiin vuonna 2017 ja mahdollistaa pelaamisen sekä telkkarissa että käsikonsolina?",
+        "answer": "Nintendo Switch"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "8. Kuka suomalainen pop-artisti nousi kansainväliseen suosioon kappaleella 'Karma'?",
+        "answer": "Alma"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "9. Mikä ohjelma teki paluun vuonna 2016 Jaajo Linnonmaan juontamana?",
+        "answer": "Haluatko miljonääriksi?"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "10. Mikä oli hittivillitys, jossa pieni laite pyöri sormien välissä?",
+        "answer": "Fidget spinner"
+      }
+    ]
   }
 ]

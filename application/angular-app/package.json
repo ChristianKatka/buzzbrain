@@ -3,8 +3,8 @@
   "version": "0.1",
   "config": {
     "region": "eu-north-1",
-    "appBucket": "buzzbrain-production---app",
-    "distributionId": "EQ90DJ2AAHRD3"
+    "appBucket": "buzzbrain-staging---app",
+    "distributionId": "E16VKO3BCBL9J1"
   },
   "scripts": {
     "ng": "ng",

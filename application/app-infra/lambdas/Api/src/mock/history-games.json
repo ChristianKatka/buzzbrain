@@ -35,6 +35,26 @@
         "image": "/games/bg-1.webp",
         "text": "6. Mikä tunnettu muuri rakennettiin vuonna 1961 ja purettiin vuonna 1989?",
         "answer": "Berliinin muuri"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "7. Missä maassa demokratia sai alkunsa antiikin aikana?",
+        "answer": "Kreikassa (Ateenassa)"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "8 Kuka oli Suomen ensimmäinen presidentti?",
+        "answer": "Kaarlo Juho Ståhlberg"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "9 Mikä oli Rooman valtakunnan kieli?",
+        "answer": "Latina"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "10 Mille vuosisadalle Viikinkiaika sijoittuu?",
+        "answer": "700–1000-luvuille (8.–11. vuosisata)"
       }
     ]
   },
@@ -79,6 +99,21 @@
         "image": "/games/bg-1.webp",
         "text": "7. Kuka toimi Yhdysvaltain presidenttinä suurimman osan toisesta maailmansodasta?",
         "answer": "Franklin D. Roosevelt"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "8. Kuka suomalainen marsalkka johti maata talvi- ja jatkosodassa?",
+        "answer": "Carl Gustaf Emil Mannerheim"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "9. Mikä antiikin kansa rakensi Colosseumin?",
+        "answer": "Roomalaiset"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "10. Mikä filosofinen koulukunta painotti tunteiden hallintaa ja hyveellistä elämää, ja jonka tunnetuin edustaja oli Zenon?",
+        "answer": "Stoalaisuus"
       }
     ]
   }
