@@ -6,8 +6,21 @@
   [style.transitionDuration]="transitionDuration + 'ms'"
 >
   <div class="slide" *ngFor="let q of selectedGame().questions">
-    <div class="p-5 mx-6 rounded-xl bg-white/10 backdrop-blur-sm">
-      <h1 class="text-white text-9xl font-bold text-center">{{ q.text }}</h1>
+    <div>
+      <div class="p-5 mx-6 rounded-xl bg-white/10 backdrop-blur-sm">
+        <h1 class="text-white text-9xl font-bold text-center">{{ q.text }}</h1>
+      </div>
+
+      @if (!isSliding && isLastQuestionIndex()) {
+      <div class="flex justify-center mt-9">
+        <button
+          (click)="goBack()"
+          class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded"
+        >
+          Lopeta peli
+        </button>
+      </div>
+      }
     </div>
   </div>
 </div>

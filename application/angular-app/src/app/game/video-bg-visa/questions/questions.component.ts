@@ -1,12 +1,9 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component, HostListener, inject, OnChanges } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {
-  getSelectedGame,
-  getSelectedGameForGameItself,
-} from '../../../../store/selectors/games.selectors';
 import { Store } from '@ngrx/store';
+import { getSelectedGameForGameItself } from '../../../../store/selectors/games.selectors';
 
 @Component({
   standalone: true,
@@ -17,6 +14,7 @@ import { Store } from '@ngrx/store';
 })
 export class VideoBGVisaQuestionsComponent implements OnChanges {
   store = inject(Store);
+  location = inject(Location);
 
   selectedGame = this.store.selectSignal(getSelectedGameForGameItself);
 
@@ -89,5 +87,10 @@ export class VideoBGVisaQuestionsComponent implements OnChanges {
     this.isSliding = true;
     this.currentIndex = index;
     setTimeout(() => (this.isSliding = false), this.transitionDuration);
+  }
+
+  goBack(): void {
+    document.exitFullscreen?.();
+    this.location.back();
   }
 }

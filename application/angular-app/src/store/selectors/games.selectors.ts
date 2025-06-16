@@ -72,8 +72,15 @@ export const getSelectedGameForGameItself = createSelector(
       text: 'Tervetuloa Tosi-visaan!',
     };
 
+    const lastDia = {
+      answer: '',
+      image: '',
+      text: 'Kiitos osallistumisesta!',
+    };
+
     const selectedGameWithStartscreen = structuredClone(selectedGame); // Deep copy
-    selectedGameWithStartscreen.questions.unshift(firstDia); // Now safe to mutate
+    selectedGameWithStartscreen.questions.unshift(firstDia);
+    selectedGameWithStartscreen.questions.push(lastDia);
 
     return selectedGameWithStartscreen;
   }

@@ -15,9 +15,8 @@ import { getSelectedGameCategory } from '../../../store/selectors/game-categorie
 })
 export class GCNavbarComponent {
   store = inject(Store);
+  location = inject(Location);
   selectedGameCategory = this.store.selectSignal(getSelectedGameCategory);
-
-  constructor(private location: Location) {}
 
   goBack(): void {
     this.location.back();
