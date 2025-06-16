@@ -2,7 +2,7 @@
   {
     "categoryId": "sport",
     "displayName": "Sportti Visat",
-    "description": "Hauska ja haastava visasarja, joka kattaa eri urheilulajit jääkiekosta aina moottoriurheiluun. Jokaisessa pelissä on useita kysymyksiä",
+    "description": "Urheiluun liittyviä kysymyspaketteja",
     "image": "new/game-categories/sport/etusivu-urheilu.webp",
     "logo": "new/game-categories/sport/urheilu.png",
     "headerImage": "new/game-categories/sport/sport-header.webp"
@@ -18,7 +18,7 @@
   {
     "categoryId": "common-knowledge",
     "displayName": "Yleis tieto",
-    "description": "Luulitko tietäväsi perusjutut? Nämä kysymykset kattavat kaiken, mitä jokaisen pitäisi tietää",
+    "description": "Yleistiedon erilaisia kysymyspaketteja",
     "image": "new/game-categories/common-knowledge/yleistieto-etusivu-logo.webp",
     "logo": "new/game-categories/common-knowledge/yleistieto.png",
     "headerImage": "new/game-categories/common-knowledge/yleistieto-header.webp"

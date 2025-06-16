@@ -13,28 +13,48 @@
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "3. Kuinka monta rengasta on olympialaisten tunnuksessa?",
+        "text": "2. Kuinka monta rengasta on olympialaisten tunnuksessa?",
         "answer": "5"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "4. Missä urheilulajissa voi saada hole-in-one?",
+        "text": "3. Missä urheilulajissa voi saada hole-in-one?",
         "answer": "Golf"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "5. Kuka suomalainen on voittanut useita F1-maailmanmestaruuksia?",
+        "text": "4. Kuka suomalainen on voittanut useita F1-maailmanmestaruuksia?",
         "answer": "Mika Häkkinen"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "6. Mikä on Suomen kansallisurheilulaji?",
+        "text": "5. Mikä on Suomen kansallisurheilulaji?",
         "answer": "Pesäpallo"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "7. Mikä on jalkapallon suurin kansainvälinen turnaus?",
+        "text": "6. Mikä on jalkapallon suurin kansainvälinen turnaus?",
         "answer": "Fifa World Cup"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "7. Kuka urheilija juoksi maailmanennätyksen 100 metrillä?",
+        "answer": "Usain Bolt"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "8. Missä kaupungissa järjestettiin ensimmäiset modernit olympialaiset vuonna 1896?",
+        "answer": "Ateena"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "9. Kuka Suomalainen jääkiekkoilija tunnetaan lempinimellä 'The Finnish Flash'?",
+        "answer": "Teemu Selänne"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "10. Mikä on suomalaisen Formula 1 -kuljettaja Kimi Räikkösen lempinimi?",
+        "answer": "Iceman"
       }
     ]
   },
@@ -82,8 +102,18 @@
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "10. Minkä lajin tunnettuja kilpailuja ovat esimerkiksi 'Ironman' ja 'Kona World Championship'?",
+        "text": "8. Minkä lajin tunnettuja kilpailuja ovat esimerkiksi 'Ironman' ja 'Kona World Championship'?",
         "answer": "Triathlon"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "9. Mikä talli on voittanut eniten valmistajien maailmanmestaruuksia Formula 1:ssä?",
+        "answer": "Ferrari"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "10. Mikä ranskalainen kaupunki toimii 24 tunnin Le Mans -kilpailun tapahtumapaikkana?",
+        "answer": "Le Mans"
       }
     ]
   },
@@ -96,23 +126,53 @@
     "questions": [
       {
         "image": "/games/bg-1.webp",
-        "text": "1. Mikä talli on voittanut eniten valmistajien maailmanmestaruuksia Formula 1:ssä?",
-        "answer": "Ferrari"
-      },
-      {
-        "image": "/games/bg-1.webp",
-        "text": "3. Mikä ranskalainen kaupunki toimii 24 tunnin Le Mans -kilpailun tapahtumapaikkana?",
-        "answer": "Le Mans"
-      },
-      {
-        "image": "/games/bg-1.webp",
-        "text": "7. Montako kuljettajaa lähtee lähtöviivalle MotoGP-kilpailussa normaalisti?",
+        "text": "1. Montako kuljettajaa lähtee lähtöviivalle MotoGP-kilpailussa normaalisti?",
         "answer": "22"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "10. Mikä Kansainvälinen autoliitto tunnetaan lyhenteellä FIA?",
+        "text": "2. Mikä Kansainvälinen autoliitto tunnetaan lyhenteellä FIA?",
         "answer": "Federation Internationale de l'Automobile"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "3. Kuka on voittanut eniten WRC:n maailmanmestaruuksia?",
+        "answer": "Sébastien Loeb (9 mestaruutta)"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "4. Missä maassa järjestetään legendaarinen Safari Rally?",
+        "answer": "Keniassa"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "5. Millä autolla Tommi Mäkinen ajoi mestaruusvuosina 1996-1999?",
+        "answer": "Mitsubishi Lancer Evolution"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "6. Kuka Suomalainen kuljettaja voitti WRC-mestaruuden vuonna 2000?",
+        "answer": "Marcus Grönholm"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "7. Kuinka monta kertaa Juha Kankkunen voitti maailmanmestaruuden?",
+        "answer": "4 kertaa"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "8. Kuka suomalainen voitti F1-maailmanmestaruuden vuonna 2007?",
+        "answer": "Kimi Räikkönen"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "9. Kuka on vanhin Formula 1 -kuljettaja, joka on voittanut GP:n?",
+        "answer": "Luigi Fagioli (53-vuotiaana, Ranskan GP 1951)"
+      },
+      {
+        "image": "/games/bg-1.webp",
+        "text": "10. Mikä oli Kimi Räikkösen F1-uran viimeinen talli?",
+        "answer": "Alfa Romeo (2021)"
       }
     ]
   }

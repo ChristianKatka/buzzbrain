@@ -8,32 +8,32 @@
     "questions": [
       {
         "image": "/games/bg-1.webp",
-        "text": "3. Mikä tapahtuma käynnisti ensimmäisen maailmansodan vuonna 1914?",
+        "text": "1. Mikä tapahtuma käynnisti ensimmäisen maailmansodan vuonna 1914?",
         "answer": "Sarajevon laukaukset eli Itävalta-Unkarin arkkiherttuan murha"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "4. Mikä oli keskiajan Euroopassa rutoksi kutsutun kulkutaudin virallinen nimi?",
+        "text": "2. Mikä oli keskiajan Euroopassa rutoksi kutsutun kulkutaudin virallinen nimi?",
         "answer": "Mustasurma"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "5. Kuka oli Neuvostoliiton johtaja toisen maailmansodan aikana?",
+        "text": "3. Kuka oli Neuvostoliiton johtaja toisen maailmansodan aikana?",
         "answer": "Josef Stalin"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "7. Mikä oli Ranskan vallankumouksen tunnuslause?",
+        "text": "4. Mikä oli Ranskan vallankumouksen tunnuslause?",
         "answer": "Vapaus, veljeys ja tasa-arvo"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "8. Kuka kuningatar hallitsi Englantia vuosina 1837–1901?",
+        "text": "5. Kuka kuningatar hallitsi Englantia vuosina 1837–1901?",
         "answer": "Victoria"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "9. Mikä tunnettu muuri rakennettiin vuonna 1961 ja purettiin vuonna 1989?",
+        "text": "6. Mikä tunnettu muuri rakennettiin vuonna 1961 ja purettiin vuonna 1989?",
         "answer": "Berliinin muuri"
       }
     ]
@@ -57,27 +57,27 @@
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "4. Kuka oli Iso-Britannian pääministeri suurimman osan toista maailmansotaa?",
+        "text": "3. Kuka oli Iso-Britannian pääministeri suurimman osan toista maailmansotaa?",
         "answer": "Winston Churchill"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "5. Minkä niminen salainen projekti johti atomipommin kehittämiseen Yhdysvalloissa?",
+        "text": "4. Minkä niminen salainen projekti johti atomipommin kehittämiseen Yhdysvalloissa?",
         "answer": "Manhattan-projekti"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "6. Minkä kaupungin/kaupunkien pommittaminen johti toisen maailmansodan päättymiseen Japanin osalta?",
+        "text": "5. Minkä kaupungin/kaupunkien pommittaminen johti toisen maailmansodan päättymiseen Japanin osalta?",
         "answer": "Hiroshima ja Nagasaki"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "7. Mikä oli Suomen ja Neuvostoliiton välinen toinen sota vuosina 1941–1944?",
+        "text": "6. Mikä oli Suomen ja Neuvostoliiton välinen toinen sota vuosina 1941–1944?",
         "answer": "Jatkosota"
       },
       {
         "image": "/games/bg-1.webp",
-        "text": "9. Kuka toimi Yhdysvaltain presidenttinä suurimman osan toisesta maailmansodasta?",
+        "text": "7. Kuka toimi Yhdysvaltain presidenttinä suurimman osan toisesta maailmansodasta?",
         "answer": "Franklin D. Roosevelt"
       }
     ]

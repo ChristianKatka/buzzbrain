@@ -1,61 +1,9 @@
 [
-  {
-    "image": "/games/bg-1.webp",
-    "text": "3. Mikä planeetta on lähimpänä aurinkoa?",
-    "answer": "Merkurius"
-  },
-  {
-    "image": "/games/bg-1.webp",
-    "text": "5. Mikä on suomalaisen Formula 1 -kuljettaja Kimi Räikkösen lempinimi?",
-    "answer": "Iceman"
-  },
-  {
-    "image": "/games/bg-1.webp",
-    "text": "6. Mikä oli Italian valuutta ennen euroa?",
-    "answer": "Liira"
-  },
-
-  {
-    "image": "/games/bg-1.webp",
-    "text": "9. Mikä eläin on tunnettu siitä, että se nukkuu pää alaspäin?",
-    "answer": "Lepakko"
-  },
-  {
-    "image": "/games/bg-1.webp",
-    "text": "10. Mistä kaupungista The Beatles -yhtye on kotoisin?",
-    "answer": "Liverpool"
-  },
-
   [
-    {
-      "image": "/games/bg-1.webp",
-      "text": "11. Mikä elementti on kemialliselta lyhenteeltään 'O'?",
-      "answer": "Happi"
-    },
     {
       "image": "/games/bg-1.webp",
       "text": "12. Missä kaupungissa järjestettiin vuoden 2000 kesäolympialaiset?",
       "answer": "Sydney"
-    },
-    {
-      "image": "/games/bg-1.webp",
-      "text": "13. Mikä on maailman suurin saari (ei mantereeksi luokiteltu)?",
-      "answer": "Grönlanti"
-    },
-    {
-      "image": "/games/bg-1.webp",
-      "text": "14. Kuka näytteli pääosaa elokuvassa Forrest Gump?",
-      "answer": "Tom Hanks"
-    },
-    {
-      "image": "/games/bg-1.webp",
-      "text": "16. Kuka Suomalainen jääkiekkoilija tunnetaan lempinimellä 'The Finnish Flash'?",
-      "answer": "Teemu Selänne"
-    },
-    {
-      "image": "/games/bg-1.webp",
-      "text": "17. Minkä bändin kappaleita ovat mm. 'Bohemian Rhapsody' ja 'Don't Stop Me Now'?",
-      "answer": "Queen"
     },
     {
       "image": "/games/bg-1.webp",
@@ -88,11 +36,6 @@
       "image": "/games/bg-1.webp",
       "text": "27. Mikä eläin esiintyy Suomen vaakunassa?",
       "answer": "Leijona"
-    },
-    {
-      "image": "/games/bg-1.webp",
-      "text": "28. Missä kaupungissa järjestettiin ensimmäiset modernit olympialaiset vuonna 1896?",
-      "answer": "Ateena"
     }
   ],
   [
@@ -162,12 +105,6 @@
       "image": "/games/bg-1.webp",
       "text": "34. Mikä laulaja tunnetaan kappaleista 'Bad Romance' ja 'Shallow'?",
       "answer": "Lady Gaga"
-    },
-
-    {
-      "image": "/games/bg-1.webp",
-      "text": "43. Kuka urheilija juoksi maailmanennätyksen 100 metrillä?",
-      "answer": "Usain Bolt"
     },
 
     {
