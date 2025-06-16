@@ -2,8 +2,8 @@
   {
     "gameId": "light-questions",
     "categoryId": "sport",
-    "title": "Urheilutietovisailu: Kevyt kysymyspaketti",
-    "description": "Täydellisiä kysymyksiä rentoon pubi visailuun, sopii iltamyöhälle kuin myös iltapäivälle",
+    "title": "Urheilutietovisa kysymyspaketti",
+    "description": "Kysymyksiä urheilusta",
     "image": "new/game-categories/sport/sport-game1.webp",
     "questions": [
       {
@@ -61,7 +61,7 @@
   {
     "gameId": "light-questions-2",
     "categoryId": "sport",
-    "title": "Urheilutietovisailu2: Kevyt kysymyspaketti 2",
+    "title": "Urheilutietovisa kysymyspaketti 2",
     "description": "Täydellisiä kysymyksiä rentoon pubi visailuun, sopii iltamyöhälle kuin myös iltapäivälle",
     "image": "new/game-categories/sport/sport-game2.webp",
     "questions": [
@@ -120,8 +120,8 @@
   {
     "gameId": "motor-sport-questions",
     "categoryId": "sport",
-    "title": "Moottori-urheilu: kysymyspaketti",
-    "description": "Kysymyksiä moottori urheilusta",
+    "title": "Urheilutietovisa kysymyspaketti 3",
+    "description": "Kysymyksiä urheilusta 3",
     "image": "new/game-categories/sport/sport-game3.webp",
     "questions": [
       {

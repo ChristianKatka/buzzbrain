@@ -4,10 +4,11 @@ import { AuthCredentials } from '../../models/auth-credentials.model';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { AuthUiSelectors } from '../../../../store/selectors';
 import { AuthActions } from '../../../../store/actions';
+import { LogoComponent } from '../../../../shared/components/logo/logo.component';
 
 @Component({
   standalone: true,
-  imports: [LoginFormComponent],
+  imports: [LoginFormComponent, LogoComponent],
   templateUrl: 'login.container.html',
   styleUrl: 'login.container.scss',
 })

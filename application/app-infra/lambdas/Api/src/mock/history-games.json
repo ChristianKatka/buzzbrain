@@ -2,7 +2,7 @@
   {
     "gameId": "history-questions",
     "categoryId": "history",
-    "title": "Historia: Kevyt kysymyspaketti",
+    "title": "Historia: kysymyspaketti",
     "description": "Historiaan pohjautuvia kysymyksiä iltaan kuin päiväänkin",
     "image": "new/game-categories/history/history-game1.webp",
     "questions": [
@@ -61,7 +61,7 @@
   {
     "gameId": "history-questions-2",
     "categoryId": "history",
-    "title": "Historia: Kevyt kysymyspaketti 2",
+    "title": "Historia: kysymyspaketti 2",
     "description": "Historiaan 2 pohjautuvia kysymyksiä iltaan kuin päiväänkin",
     "image": "new/game-categories/history/history-game2.webp",
     "questions": [
