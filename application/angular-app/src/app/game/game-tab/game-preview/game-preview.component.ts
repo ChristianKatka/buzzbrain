@@ -4,7 +4,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { Store } from '@ngrx/store';
-import { getSelectedGame } from '../../../../store/selectors/games.selectors';
+import { getSelectedGameForGameItself } from '../../../../store/selectors/games.selectors';
 
 @Component({
   standalone: true,
@@ -15,5 +15,5 @@ import { getSelectedGame } from '../../../../store/selectors/games.selectors';
 export class GamePreviewComponent {
   store = inject(Store);
 
-  game = this.store.selectSignal(getSelectedGame);
+  game = this.store.selectSignal(getSelectedGameForGameItself);
 }

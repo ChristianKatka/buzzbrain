@@ -44,19 +44,37 @@ export const getSelectedGame = createSelector(
   selectGamesState,
   getSelectedGameCategory,
   (state, selectedGameCategory) => {
-    console.log('SELECTED GAME:::');
-
     if (!selectedGameCategory) return undefined;
     if (!state.selectedGame) return undefined;
 
     const selectedGategoryGames: any =
       state.gamesByCategory[selectedGameCategory.categoryId];
-    console.log('selectedGategoryGames');
-    console.log(selectedGategoryGames);
-
-    console.log('selectedGame');
-    console.log(selectedGategoryGames[state.selectedGame]);
 
     return selectedGategoryGames[state.selectedGame];
+  }
+);
+
+export const getSelectedGameForGameItself = createSelector(
+  selectGamesState,
+  getSelectedGameCategory,
+  (state, selectedGameCategory) => {
+    if (!selectedGameCategory) return undefined;
+    if (!state.selectedGame) return undefined;
+
+    const selectedGategoryGames: any =
+      state.gamesByCategory[selectedGameCategory.categoryId];
+
+    const selectedGame = selectedGategoryGames[state.selectedGame];
+
+    const firstDia = {
+      answer: '',
+      image: '',
+      text: 'Tervetuloa Tosi-visaan!',
+    };
+
+    const selectedGameWithStartscreen = structuredClone(selectedGame); // Deep copy
+    selectedGameWithStartscreen.questions.unshift(firstDia); // Now safe to mutate
+
+    return selectedGameWithStartscreen;
   }
 );

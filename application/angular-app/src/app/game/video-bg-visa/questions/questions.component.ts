@@ -2,7 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener, inject, OnChanges } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { getSelectedGame } from '../../../../store/selectors/games.selectors';
+import {
+  getSelectedGame,
+  getSelectedGameForGameItself,
+} from '../../../../store/selectors/games.selectors';
 import { Store } from '@ngrx/store';
 
 @Component({
@@ -15,7 +18,7 @@ import { Store } from '@ngrx/store';
 export class VideoBGVisaQuestionsComponent implements OnChanges {
   store = inject(Store);
 
-  selectedGame = this.store.selectSignal(getSelectedGame);
+  selectedGame = this.store.selectSignal(getSelectedGameForGameItself);
 
   currentIndex = 0;
   isSliding = false;
